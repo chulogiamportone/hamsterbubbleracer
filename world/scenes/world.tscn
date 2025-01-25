@@ -40,12 +40,10 @@ use_collision = true
 size = Vector3(1000, 2, 1000)
 
 [node name="player" parent="." instance=ExtResource("2_8mq63")]
-<<<<<<< Updated upstream
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-=======
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
 
 [node name="Speed" parent="." instance=ExtResource("3_dh1oq")]
-transform = Transform3D(1, 0, 0, 0, 1.14075, 0, 0, 0, 1, 0, 0, 3)
-constant_linear_velocity = Vector3(0, 0, 200)
-constant_angular_velocity = Vector3(0, 0, 1.74533)
->>>>>>> Stashed changes
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.154186, 4.76837e-07, 4.04902)
+
+[node name="Speed2" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.154186, 4.76837e-07, 65.5076)
