@@ -15,6 +15,10 @@ run/main_scene="res://world/scenes/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalR="*res://GlobalR.gd"
+
 [input]
 
 move_forward={
