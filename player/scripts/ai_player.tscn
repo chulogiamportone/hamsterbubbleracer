@@ -1,15 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://drns7fwaluwqh"]
+[gd_scene load_steps=7 format=3 uid="uid://b1es5ythlklt"]
 
-[ext_resource type="Texture2D" uid="uid://8eihe0i1u0h3" path="res://assets/textures/orange/texture_09.png" id="1_824vg"]
-[ext_resource type="Script" path="res://player/scenes/player.tres.gd" id="1_l4tx2"]
+[ext_resource type="Script" path="res://ai_player.gd" id="1_ryshp"]
+[ext_resource type="Texture2D" uid="uid://cur8237ge6uyy" path="res://assets/textures/purple/texture_03.png" id="2_icq4q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1c2f"]
 rough = true
 bounce = 0.6
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crg6n"]
-albedo_texture = ExtResource("1_824vg")
-uv2_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6s0l2"]
+albedo_texture = ExtResource("2_icq4q")
 
 [sub_resource type="SphereMesh" id="SphereMesh_d76o5"]
 radius = 1.0
@@ -17,15 +16,14 @@ height = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nk1ak"]
 
-[node name="player" type="Node3D"]
+[node name="ai_player" type="Node3D"]
 
 [node name="hamster_ball" type="RigidBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_t1c2f")
-angular_damp = 20.0
-script = ExtResource("1_l4tx2")
+script = ExtResource("1_ryshp")
 
 [node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
-material_override = SubResource("StandardMaterial3D_crg6n")
+material_override = SubResource("StandardMaterial3D_6s0l2")
 mesh = SubResource("SphereMesh_d76o5")
 
 [node name="hitbox" type="CollisionShape3D" parent="hamster_ball"]
