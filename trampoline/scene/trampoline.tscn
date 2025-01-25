@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://beloata4fmem5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cnlwb"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rawn4"]
+
+[node name="Trampoline" type="AnimatableBody3D"]
+constant_linear_velocity = Vector3(0, 100, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+shape = SubResource("BoxShape3D_cnlwb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("PlaneMesh_rawn4")
+skeleton = NodePath("../..")

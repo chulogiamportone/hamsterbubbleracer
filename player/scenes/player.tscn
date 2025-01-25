@@ -21,6 +21,7 @@ height = 2.0
 
 [node name="hamster_ball" type="RigidBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_t1c2f")
+angular_damp = 20.0
 script = ExtResource("1_l4tx2")
 
 [node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
