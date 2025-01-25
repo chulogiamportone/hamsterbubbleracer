@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://sljbkndk6dnj"]
+
+[ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="1_u7oys"]
+[ext_resource type="PackedScene" uid="uid://dufgfxbypv01w" path="res://world/scenes/race_track.tscn" id="1_wgwqt"]
+[ext_resource type="Texture2D" uid="uid://cp0i8mdidyhdg" path="res://assets/textures/dark/texture_08.png" id="2_de0ss"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq4l5"]
+albedo_texture = ExtResource("2_de0ss")
+uv1_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmwoq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_n78yi"]
+sky_material = SubResource("ProceduralSkyMaterial_pmwoq")
+
+[sub_resource type="Environment" id="Environment_pe761"]
+background_mode = 2
+sky = SubResource("Sky_n78yi")
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.739811, 0.76485, 0.804196, 1)
+fog_light_energy = 0.5
+fog_density = 0.0015
+
+[node name="level_0" type="Node3D"]
+
+[node name="mapa5hams" parent="." instance=ExtResource("1_wgwqt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="BézierCurve" parent="mapa5hams" index="0"]
+material_override = SubResource("StandardMaterial3D_kq4l5")
+
+[node name="Camera3D" parent="." instance=ExtResource("1_u7oys")]
+
+[node name="player1" parent="Camera3D/SubViewportContainer/SubViewport1" index="0"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -91.3627, -3.2, -75.6379)
+
+[node name="mesh" parent="Camera3D/SubViewportContainer/SubViewport1/player1/hamster_ball" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026741, 1.19209e-07, 0.00615072)
+
+[node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -91.3627, -3.2, -71.2884)
+
+[node name="enviroment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pe761")
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[editable path="mapa5hams"]
+[editable path="Camera3D"]
+[editable path="Camera3D/SubViewportContainer/SubViewport1/player1"]
+[editable path="Camera3D/SubViewportContainer2/SubViewport2/player2"]
