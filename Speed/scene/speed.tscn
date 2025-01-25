@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0qyk4yk80q5h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhn7g"]
+size = Vector3(0.025, 0, 0.04)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rb4me"]
+size = Vector2(3, 5)
+
+[node name="Speed" type="AnimatableBody3D"]
+constant_linear_velocity = Vector3(0, 0, 200)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(113.849, 0, 0, 0, 113.849, 0, 0, 0, 113.849, 0, 0.011, 0)
+shape = SubResource("BoxShape3D_qhn7g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00364, 0, 0, 0, 1.00364, 0, 0, 0, 1.00364, 0, 0.01, 0)
+mesh = SubResource("PlaneMesh_rb4me")

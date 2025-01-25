@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://behenbvhe8kga"]
+[gd_scene load_steps=8 format=3 uid="uid://behenbvhe8kga"]
 
 [ext_resource type="Texture2D" uid="uid://slqiopssinr8" path="res://assets/textures/dark/texture_04.png" id="1_hhd7p"]
 [ext_resource type="PackedScene" uid="uid://drns7fwaluwqh" path="res://player/scenes/player.tscn" id="2_8mq63"]
+[ext_resource type="PackedScene" uid="uid://c0qyk4yk80q5h" path="res://Speed/scene/speed.tscn" id="3_dh1oq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h7r1n"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,4 +40,12 @@ use_collision = true
 size = Vector3(1000, 2, 1000)
 
 [node name="player" parent="." instance=ExtResource("2_8mq63")]
+<<<<<<< Updated upstream
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+=======
+
+[node name="Speed" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(1, 0, 0, 0, 1.14075, 0, 0, 0, 1, 0, 0, 3)
+constant_linear_velocity = Vector3(0, 0, 200)
+constant_angular_velocity = Vector3(0, 0, 1.74533)
+>>>>>>> Stashed changes
