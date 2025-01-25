@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://behenbvhe8kga"]
+[gd_scene load_steps=10 format=3 uid="uid://behenbvhe8kga"]
 
 [ext_resource type="Texture2D" uid="uid://slqiopssinr8" path="res://assets/textures/dark/texture_04.png" id="1_hhd7p"]
 [ext_resource type="PackedScene" uid="uid://drns7fwaluwqh" path="res://player/scenes/player.tscn" id="2_8mq63"]
 [ext_resource type="PackedScene" uid="uid://c0qyk4yk80q5h" path="res://Speed/scene/speed.tscn" id="3_dh1oq"]
+[ext_resource type="PackedScene" uid="uid://b1es5ythlklt" path="res://player/scripts/ai_player.tscn" id="4_js17n"]
+[ext_resource type="PackedScene" uid="uid://c6jbi4bwr6qsl" path="res://world/scenes/oval.tscn" id="5_qrnvs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h7r1n"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,10 +42,15 @@ use_collision = true
 size = Vector3(1000, 2, 1000)
 
 [node name="player" parent="." instance=ExtResource("2_8mq63")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 79.7, 2.2, 0)
 
 [node name="Speed" parent="." instance=ExtResource("3_dh1oq")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.154186, 4.76837e-07, 4.04902)
 
 [node name="Speed2" parent="." instance=ExtResource("3_dh1oq")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.154186, 4.76837e-07, 65.5076)
+
+[node name="ai_player" parent="." instance=ExtResource("4_js17n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 1, 0)
+
+[node name="mapahams" parent="." instance=ExtResource("5_qrnvs")]
