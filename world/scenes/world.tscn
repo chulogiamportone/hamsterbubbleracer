@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://behenbvhe8kga"]
 
 [ext_resource type="Texture2D" uid="uid://slqiopssinr8" path="res://assets/textures/dark/texture_04.png" id="1_hhd7p"]
-[ext_resource type="PackedScene" uid="uid://drns7fwaluwqh" path="res://player/scenes/player.tscn" id="2_8mq63"]
 [ext_resource type="PackedScene" uid="uid://c0qyk4yk80q5h" path="res://Speed/scene/speed.tscn" id="3_dh1oq"]
-[ext_resource type="PackedScene" uid="uid://b1es5ythlklt" path="res://player/scripts/ai_player.tscn" id="4_js17n"]
-[ext_resource type="PackedScene" uid="uid://c6jbi4bwr6qsl" path="res://world/scenes/oval.tscn" id="5_qrnvs"]
+[ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="4_ydm76"]
+[ext_resource type="PackedScene" uid="uid://beloata4fmem5" path="res://trampoline/scene/trampoline.tscn" id="5_mvkm4"]
+[ext_resource type="PackedScene" path="res://world/scenes/oval.tscn" id="5_qrnvs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h7r1n"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -41,16 +41,51 @@ material_override = SubResource("StandardMaterial3D_aqgvm")
 use_collision = true
 size = Vector3(1000, 2, 1000)
 
-[node name="player" parent="." instance=ExtResource("2_8mq63")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 79.7, 2.2, 0)
-
 [node name="Speed" parent="." instance=ExtResource("3_dh1oq")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.154186, 4.76837e-07, 4.04902)
+
+[node name="Speed4" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 69.3841, 0.722318, 4.04902)
+
+[node name="Speed5" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 69.4467, 0.727817, 50.0238)
+
+[node name="Speed6" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 49.8002, 2.29977, 89.0941)
+
+[node name="Speed7" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.28141, 2.69453, 116.764)
+
+[node name="Speed8" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -79.161, 0.897208, 45.4922)
+
+[node name="Speed9" parent="." instance=ExtResource("3_dh1oq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -65.0655, 1.26408, -44.9279)
 
 [node name="Speed2" parent="." instance=ExtResource("3_dh1oq")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.154186, 4.76837e-07, 65.5076)
 
-[node name="ai_player" parent="." instance=ExtResource("4_js17n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 1, 0)
-
 [node name="mapahams" parent="." instance=ExtResource("5_qrnvs")]
+
+[node name="Camera3D" parent="." instance=ExtResource("4_ydm76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1689.82, 324, 0)
+fov = 126.563
+
+[node name="player1" parent="Camera3D/SubViewportContainer/SubViewport1" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 75.9023, 1.93471, 0)
+
+[node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 67.6694, 1.80461, 0)
+
+[node name="Trampoline" parent="." instance=ExtResource("5_mvkm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8602, 0.947417, 0)
+
+[node name="Trampoline2" parent="." instance=ExtResource("5_mvkm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.6549, 1.53986, -66.7515)
+
+[node name="Trampoline3" parent="." instance=ExtResource("5_mvkm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7803, 0.239958, 117.991)
+
+[editable path="Camera3D"]
+[editable path="Camera3D/SubViewportContainer/SubViewport1/player1"]
+[editable path="Camera3D/SubViewportContainer2/SubViewport2/player2"]
