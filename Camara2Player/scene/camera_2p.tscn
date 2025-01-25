@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://3gaox0812jtj"]
+
+[ext_resource type="PackedScene" uid="uid://drns7fwaluwqh" path="res://player/scenes/player.tscn" id="1_26l5t"]
+[ext_resource type="Script" path="res://Camara2Player/scene/camera_2p.gd" id="1_pgw4x"]
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 576, 324, 0)
+script = ExtResource("1_pgw4x")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -576.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport1" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(576, 648)
+render_target_update_mode = 4
+
+[node name="player1" parent="SubViewportContainer/SubViewport1" instance=ExtResource("1_26l5t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.19005, 1, 0)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(576, 648)
+render_target_update_mode = 4
+
+[node name="player2" parent="SubViewportContainer2/SubViewport2" instance=ExtResource("1_26l5t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.684598, 1, 0)
+
+[node name="hamster_ball" parent="SubViewportContainer2/SubViewport2/player2" index="0"]
+is_player_two = true
+
+[editable path="SubViewportContainer/SubViewport1/player1"]
+[editable path="SubViewportContainer2/SubViewport2/player2"]
