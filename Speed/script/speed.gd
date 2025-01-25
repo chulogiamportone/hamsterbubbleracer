@@ -1,6 +1,6 @@
 class_name Speed extends Area3D
 
-@export var boost:int=10
+@export var boost:int=4
 
 
 func _on_body_entered(body: Node3D) -> void:

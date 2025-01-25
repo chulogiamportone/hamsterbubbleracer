@@ -16,6 +16,9 @@ func _ready() -> void:
 	real_speed=move_speed
 
 func _physics_process(delta: float) -> void:
+	mass = 2
+	angular_damp = 20
+	physics_material_override.bounce = 0.1
 	camera_rig.global_position = global_position
 	if is_player_two:
 		if Input.is_action_pressed("move_left2"):  
