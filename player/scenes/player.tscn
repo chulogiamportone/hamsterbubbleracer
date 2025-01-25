@@ -20,12 +20,11 @@ height = 2.0
 script = ExtResource("1_l4tx2")
 
 [node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_crg6n")
 mesh = SubResource("SphereMesh_d76o5")
 
 [node name="hitbox" type="CollisionShape3D" parent="hamster_ball"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.503147, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_nk1ak")
 
 [node name="CameraRig" type="Node3D" parent="."]
