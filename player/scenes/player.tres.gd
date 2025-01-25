@@ -1,9 +1,9 @@
 class_name Player extends RigidBody3D
 
-@export var move_speed := 20
+@export var move_speed := 30
 @export var jump_force := 8.0
 @export var camera_rotation_speed := 1.1 
-@export var max_velocity := 60
+@export var max_velocity := 80
 @export var is_player_two :bool=false
 
 @onready var camera_rig: Node3D = $CameraRig
