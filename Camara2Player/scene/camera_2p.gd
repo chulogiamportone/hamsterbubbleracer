@@ -9,7 +9,6 @@ func _process(delta: float) -> void:
 	sub_viewport_container.size.x=get_viewport().size.x/2;
 	sub_viewport_container_2.size.x=get_viewport().size.x/2;
 	
-
 	sub_viewport_container.size.y=get_viewport().size.y;
 	sub_viewport_container_2.size.y=get_viewport().size.y;
 	
