@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dom5pi6fwsoyw"]
+
+[ext_resource type="Script" path="res://ai_player.gd" id="1_ryshp"]
+[ext_resource type="Texture2D" uid="uid://cur8237ge6uyy" path="res://assets/textures/purple/texture_03.png" id="2_icq4q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1c2f"]
+rough = true
+bounce = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6s0l2"]
+albedo_texture = ExtResource("2_icq4q")
+
+[sub_resource type="SphereMesh" id="SphereMesh_d76o5"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nk1ak"]
+
+[node name="ai_player" type="Node3D"]
+
+[node name="hamster_ball" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_t1c2f")
+script = ExtResource("1_ryshp")
+
+[node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
+material_override = SubResource("StandardMaterial3D_6s0l2")
+mesh = SubResource("SphereMesh_d76o5")
+
+[node name="hitbox" type="CollisionShape3D" parent="hamster_ball"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_nk1ak")
+
+[node name="CameraRig" type="Node3D" parent="hamster_ball"]
+
+[node name="Camera3D" type="Camera3D" parent="hamster_ball/CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.78912, 4.64622)

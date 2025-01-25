@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://8qndl7cv3ep2"]
+
+[ext_resource type="Texture2D" uid="uid://cn7oegupwu5f0" path="res://assets/textures/dark/texture_02.png" id="2_5wcmx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1noa1"]
+albedo_texture = ExtResource("2_5wcmx")
+uv1_triplanar = true
+
+[node name="mapahams"]
+
+[node name="parabolic2_002" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_1noa1")
