@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://oyw2vmw83one"]
+[gd_scene load_steps=16 format=3 uid="uid://oyw2vmw83one"]
 
 [ext_resource type="Script" path="res://scenes/load_scene.gd" id="1_f17x8"]
 [ext_resource type="Texture2D" uid="uid://bll6av624ovmk" path="res://Assets/HAMSTER/base rueda.png" id="1_l24am"]
@@ -6,19 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bgaisn81p0bhb" path="res://Assets/HAMSTER/rueda.png" id="2_4mbwy"]
 [ext_resource type="Texture2D" uid="uid://yjqy6hla1v0f" path="res://Assets/HAMSTER/hamster run.png" id="3_jswce"]
 [ext_resource type="Script" path="res://scenes/margin_container.gd" id="4_hxeei"]
-[ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://fonts/Font_pixel.tres" id="8_gv85u"]
-[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="8_v0ydn"]
-[ext_resource type="Texture2D" uid="uid://dsynicnmrby25" path="res://Assets/controles/A.png" id="8_whxhn"]
-[ext_resource type="Texture2D" uid="uid://bwyj8xtexcl60" path="res://Assets/controles/D.png" id="10_iolsf"]
-[ext_resource type="Texture2D" uid="uid://d0yo4bevrl5dv" path="res://Assets/controles/S.png" id="11_dwh15"]
-[ext_resource type="Texture2D" uid="uid://d15r07fsfy1xn" path="res://Assets/controles/SPACEALTERNATIVE.png" id="12_36vga"]
-[ext_resource type="Texture2D" uid="uid://bgvyun4n17adu" path="res://Assets/controles/W.png" id="12_amrpu"]
-[ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://fonts/Label_pixel_16px.tres" id="13_8jjwo"]
-[ext_resource type="Texture2D" uid="uid://bt2dcmdgjeauv" path="res://Assets/controles/ARROWUP.png" id="14_6cq4o"]
-[ext_resource type="Texture2D" uid="uid://db4773lno4acb" path="res://Assets/controles/ARROWLEFT.png" id="15_q5spg"]
-[ext_resource type="Texture2D" uid="uid://co3b66xtc1dyj" path="res://Assets/controles/ARROWDOWN.png" id="16_uhjkp"]
-[ext_resource type="Texture2D" uid="uid://bd4e3jbtk3bpw" path="res://Assets/controles/ARROWRIGHT.png" id="17_7lvk5"]
-[ext_resource type="Texture2D" uid="uid://c4a6rvjqbaal0" path="res://Assets/controles/SHIFTBIGGER.png" id="18_1mn38"]
+[ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://Fonts/Font_pixel.tres" id="8_gv85u"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="8_v0ydn"]
+[ext_resource type="PackedScene" uid="uid://ogbxsfo3tbgi" path="res://scenes/controlloads.tscn" id="9_md65r"]
 
 [sub_resource type="Animation" id="Animation_culgp"]
 length = 0.8
@@ -194,146 +184,5 @@ theme_override_fonts/font = ExtResource("8_v0ydn")
 theme_override_font_sizes/font_size = 128
 text = "CONTROLES"
 
-[node name="Player2_label" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 1068.0
-offset_top = 473.5
-offset_right = 1312.0
-offset_bottom = 532.5
-grow_horizontal = 2
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="Player2_label"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("13_8jjwo")
-theme_override_colors/font_outline_color = Color(0.447089, 0.35415, 0.202327, 1)
-theme_override_fonts/font = ExtResource("8_v0ydn")
-theme_override_font_sizes/font_size = 64
-text = "PLAYER 2"
-horizontal_alignment = 1
-
-[node name="Keys_P2" type="GridContainer" parent="."]
-texture_filter = 1
-layout_mode = 2
-offset_left = 980.0
-offset_top = 540.5
-offset_right = 1045.0
-offset_bottom = 611.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-pivot_offset = Vector2(-50, 0)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="GridContainer3" type="GridContainer" parent="Keys_P2"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="Keys_P2/GridContainer3"]
-layout_mode = 2
-texture = ExtResource("14_6cq4o")
-
-[node name="GridContainer" type="GridContainer" parent="Keys_P2"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-columns = 3
-
-[node name="TextureRect2" type="TextureRect" parent="Keys_P2/GridContainer"]
-layout_mode = 2
-texture = ExtResource("15_q5spg")
-
-[node name="TextureRect3" type="TextureRect" parent="Keys_P2/GridContainer"]
-layout_mode = 2
-texture = ExtResource("16_uhjkp")
-
-[node name="TextureRect4" type="TextureRect" parent="Keys_P2/GridContainer"]
-layout_mode = 2
-texture = ExtResource("17_7lvk5")
-
-[node name="GridContainer2" type="GridContainer" parent="Keys_P2"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-columns = 4
-
-[node name="TextureRect5" type="TextureRect" parent="Keys_P2/GridContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("18_1mn38")
-
-[node name="Player1_label" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 602.0
-offset_top = 470.0
-offset_right = 834.0
-offset_bottom = 529.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="Player1_label"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource("13_8jjwo")
-theme_override_colors/font_outline_color = Color(0.447089, 0.35415, 0.202327, 1)
-theme_override_fonts/font = ExtResource("8_v0ydn")
-theme_override_font_sizes/font_size = 64
-text = "PLAYER 1"
-horizontal_alignment = 1
-
-[node name="Keys_P1" type="GridContainer" parent="."]
-texture_filter = 1
-layout_mode = 2
-offset_left = 462.0
-offset_top = 540.5
-offset_right = 560.0
-offset_bottom = 611.5
-grow_vertical = 2
-scale = Vector2(3, 3)
-pivot_offset = Vector2(-50, 0)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="GridContainer3" type="GridContainer" parent="Keys_P1"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="Keys_P1/GridContainer3"]
-layout_mode = 2
-texture = ExtResource("12_amrpu")
-
-[node name="GridContainer" type="GridContainer" parent="Keys_P1"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-columns = 3
-
-[node name="TextureRect2" type="TextureRect" parent="Keys_P1/GridContainer"]
-layout_mode = 2
-texture = ExtResource("8_whxhn")
-
-[node name="TextureRect3" type="TextureRect" parent="Keys_P1/GridContainer"]
-layout_mode = 2
-texture = ExtResource("11_dwh15")
-
-[node name="TextureRect4" type="TextureRect" parent="Keys_P1/GridContainer"]
-layout_mode = 2
-texture = ExtResource("10_iolsf")
-
-[node name="GridContainer2" type="GridContainer" parent="Keys_P1"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-columns = 4
-
-[node name="TextureRect5" type="TextureRect" parent="Keys_P1/GridContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("12_36vga")
+[node name="Control" parent="." instance=ExtResource("9_md65r")]
+layout_mode = 1

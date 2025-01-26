@@ -1,13 +1,14 @@
 extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var label: Label = $Label
 
 func _ready() -> void:
 	animation_player.play("main_title")
-	# Connect button signals
 	$VBoxContainer/Jugar.pressed.connect(_on_jugar_pressed)
 	$VBoxContainer/Creditos.pressed.connect(_on_creditos_pressed) 
 	$VBoxContainer/Salir.pressed.connect(_on_salir_pressed)
+
 
 func _on_jugar_pressed() -> void:
 	# Change to the game scene
