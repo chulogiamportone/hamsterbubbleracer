@@ -35,6 +35,8 @@ script/source = "class_name Died extends Area3D
 [node name="level_0" type="Node3D"]
 script = ExtResource("1_igk8f")
 
+[node name="Shading" type="Node3D" parent="."]
+
 [node name="mapa5hams" parent="." instance=ExtResource("1_wgwqt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
