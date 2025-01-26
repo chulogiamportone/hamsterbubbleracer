@@ -21,6 +21,21 @@ tracks/0/keys = {
 "values": [Vector2(705.5, 150)]
 }
 
+[sub_resource type="Animation" id="Animation_j0t6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(705.5, 150)]
+}
+
 [sub_resource type="Animation" id="Animation_k73xh"]
 resource_name = "main_title"
 length = 2.0
