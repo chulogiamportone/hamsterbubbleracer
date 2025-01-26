@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1utghpkby80w"
-path="res://.godot/imported/CINCOBLANCO.png-aa6a1cb535edb62c005512d33c91e08a.ctex"
+path="res://.godot/imported/CINCOBLANCO.png-6d4f4b73fa9d51cd12b16d5066b0f476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NUMEROS/CINCOBLANCO.png"
-dest_files=["res://.godot/imported/CINCOBLANCO.png-aa6a1cb535edb62c005512d33c91e08a.ctex"]
+source_file="res://assets/NUMEROS/CINCOBLANCO.png"
+dest_files=["res://.godot/imported/CINCOBLANCO.png-6d4f4b73fa9d51cd12b16d5066b0f476.ctex"]
 
 [params]
 
