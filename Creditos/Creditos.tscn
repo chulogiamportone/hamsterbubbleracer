@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://cftw5du6kdlyd"]
+
+[ext_resource type="Texture2D" uid="uid://bdkflho6se5w2" path="res://assets/Backgroundsolo.png" id="1_fldie"]
+[ext_resource type="Theme" path="res://Fonts/Font_pixel.tres" id="2_23v00"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="3_pmaln"]
+[ext_resource type="Theme" path="res://Fonts/Label_pixel_16px.tres" id="4_rpias"]
+[ext_resource type="Texture2D" uid="uid://5qbgefctyj8q" path="res://assets/HAMSTER NEGRO.png" id="5_ov5hl"]
+[ext_resource type="Script" path="res://Creditos/texture_button.gd" id="6_7nlvg"]
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fldie")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -264.0
+offset_right = 313.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_23v00")
+theme_override_fonts/font = ExtResource("3_pmaln")
+theme_override_font_sizes/font_size = 124
+text = "CREDITOS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -178.0
+offset_right = 286.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_rpias")
+theme_override_fonts/font = ExtResource("3_pmaln")
+theme_override_font_sizes/font_size = 40
+text = "GIAMPORTONE JULIAN - DEVELOPER GODOT
+LUCENTINI AGUSTIN - DEVELOPER GODOT
+MARATTA GIANNI  - ARTISTA 3D
+MENDOZA EMILIA - ARTISTA 2D
+PEREZ MATIAS  - ARTISTA 3D
+VILLAFANE LORENZO - UX DESIGNER
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -118.0
+offset_right = -102.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_ov5hl")
+script = ExtResource("6_7nlvg")
+
+[connection signal="pressed" from="TextureRect/TextureButton" to="TextureRect/TextureButton" method="_on_pressed"]

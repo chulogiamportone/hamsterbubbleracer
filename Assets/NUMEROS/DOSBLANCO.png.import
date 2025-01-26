@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3o8xkb7kkmkf"
-path="res://.godot/imported/DOSBLANCO.png-378aa9716e82f634c8564f6f18e273ec.ctex"
+path="res://.godot/imported/DOSBLANCO.png-c1aaa3c7edc2db42fc26a8f1855089e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NUMEROS/DOSBLANCO.png"
-dest_files=["res://.godot/imported/DOSBLANCO.png-378aa9716e82f634c8564f6f18e273ec.ctex"]
+source_file="res://assets/NUMEROS/DOSBLANCO.png"
+dest_files=["res://.godot/imported/DOSBLANCO.png-c1aaa3c7edc2db42fc26a8f1855089e6.ctex"]
 
 [params]
 

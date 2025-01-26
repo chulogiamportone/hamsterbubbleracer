@@ -24,7 +24,7 @@ var players_finished=0
 
 func _on_body_entered(body: Node3D) -> void:
 	
-	if body.name=="hamster_ball" and body.lap==3:
+	if body.name=="hamster_ball" and body.lap==0:
 		body.fin_race=true
 		players_finished+=1
 	else:
@@ -39,6 +39,8 @@ func _on_body_entered(body: Node3D) -> void:
 	if players_finished==1:
 		GlobalR.winner=body.is_player_two
 		GlobalR.time_player=GlobalR.time_race
+		timer_for_stop.stop()
+		get_tree().change_scene_to_file("res://Winner/scene/winner.tscn")
 	if players_finished==2:
 		timer_for_stop.stop()
 		get_tree().change_scene_to_file("res://Winner/scene/winner.tscn")

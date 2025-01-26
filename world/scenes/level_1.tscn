@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="4_5uctk"]
 [ext_resource type="PackedScene" uid="uid://bgjw635ryk5cu" path="res://assets/models/Meta..glb" id="4_ej8ho"]
 [ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_fdmp6"]
-[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="6_us3ei"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="6_us3ei"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="7_v0xl5"]
 [ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="8_i802p"]
 [ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="9_n4n14"]
@@ -288,8 +288,9 @@ light_energy = 0.5
 light_indirect_energy = 0.5
 shadow_enabled = true
 
-[node name="Goal" parent="." instance=ExtResource("7_v0xl5")]
+[node name="Goal" parent="." node_paths=PackedStringArray("timer_for_stop") instance=ExtResource("7_v0xl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
+timer_for_stop = NodePath("../Camera3D/TimerPlayer")
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)

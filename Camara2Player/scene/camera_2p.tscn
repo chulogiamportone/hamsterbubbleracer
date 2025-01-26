@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drns7fwaluwqh" path="res://player/scenes/player.tscn" id="1_26l5t"]
 [ext_resource type="Script" path="res://Camara2Player/scene/camera_2p.gd" id="1_pgw4x"]
-[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="3_m0mws"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="3_m0mws"]
 
 [node name="Camera3D" type="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 576, 324, 0)

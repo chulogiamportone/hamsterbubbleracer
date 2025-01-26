@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://co3b66xtc1dyj"
-path="res://.godot/imported/ARROWDOWN.png-87a140113b3a228ebb3367732884afe1.ctex"
+path="res://.godot/imported/ARROWDOWN.png-98ec1db719040e1e3a75dc2e10739406.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/controles/ARROWDOWN.png"
-dest_files=["res://.godot/imported/ARROWDOWN.png-87a140113b3a228ebb3367732884afe1.ctex"]
+source_file="res://assets/controles/ARROWDOWN.png"
+dest_files=["res://.godot/imported/ARROWDOWN.png-98ec1db719040e1e3a75dc2e10739406.ctex"]
 
 [params]
 

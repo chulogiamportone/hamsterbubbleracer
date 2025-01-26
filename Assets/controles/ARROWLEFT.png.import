@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db4773lno4acb"
-path="res://.godot/imported/ARROWLEFT.png-c377c6138b7e8f809311344282b3093d.ctex"
+path="res://.godot/imported/ARROWLEFT.png-bf31c152f0053d0e962a5b7d09847a94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/controles/ARROWLEFT.png"
-dest_files=["res://.godot/imported/ARROWLEFT.png-c377c6138b7e8f809311344282b3093d.ctex"]
+source_file="res://assets/controles/ARROWLEFT.png"
+dest_files=["res://.godot/imported/ARROWLEFT.png-bf31c152f0053d0e962a5b7d09847a94.ctex"]
 
 [params]
 

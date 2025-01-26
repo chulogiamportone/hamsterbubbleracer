@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2cq5q8kbk52v"
-path="res://.godot/imported/TRESBLANCO.png-fb69a28ce86c5c76cbf5df07002859bc.ctex"
+path="res://.godot/imported/TRESBLANCO.png-e781c6e1559e61bb8944e6a65d0f9d11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TRESBLANCO.png"
-dest_files=["res://.godot/imported/TRESBLANCO.png-fb69a28ce86c5c76cbf5df07002859bc.ctex"]
+source_file="res://assets/TRESBLANCO.png"
+dest_files=["res://.godot/imported/TRESBLANCO.png-e781c6e1559e61bb8944e6a65d0f9d11.ctex"]
 
 [params]
 
