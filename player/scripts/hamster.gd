@@ -4,7 +4,9 @@ extends Node3D
 @onready var camera: Camera3D = $"../hamster_ball/CameraRig/Camera3D"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 var rotation_speed := 100.0
+
 
 func _process(delta: float) -> void:
 	if hamster_ball:
@@ -16,8 +18,8 @@ func _process(delta: float) -> void:
 		
 		var target_rotation = atan2(camera_forward.x, camera_forward.z) - 1.5
 		rotation.y = lerp_angle(rotation.y, target_rotation, 0.1)
-		
-		# Check if the hamster ball is moving
+	
+	 # Check if the hamster ball is moving
 		var ball_speed = hamster_ball.linear_velocity.length()
 		if ball_speed > 0.1:
 			if !animation_player.is_playing():
