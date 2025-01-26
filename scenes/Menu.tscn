@@ -1,9 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnrvre72yxpc8"]
+[gd_scene load_steps=9 format=3 uid="uid://bnrvre72yxpc8"]
 
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_avk58"]
 [ext_resource type="Texture2D" uid="uid://7j88agbouf2n" path="res://Assets/Background.png" id="1_m2bo5"]
 [ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://fonts/Font_pixel.tres" id="2_0vlco"]
 [ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="3_ghus6"]
 [ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://fonts/Label_pixel_16px.tres" id="4_ohrl7"]
+
+[sub_resource type="Animation" id="Animation_k73xh"]
+resource_name = "main_title"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(705.5, 150), Vector2(705.5, 200), Vector2(705.5, 150)]
+}
+
+[sub_resource type="Animation" id="Animation_j0t6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(705.5, 150)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7vf8y"]
+_data = {
+"RESET": SubResource("Animation_j0t6w"),
+"main_title": SubResource("Animation_k73xh")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_avk58")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -26,13 +66,17 @@ texture = ExtResource("1_m2bo5")
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -254.5
+offset_top = -390.0
 offset_right = 254.5
-offset_bottom = 268.0
+offset_bottom = -122.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme = ExtResource("2_0vlco")
@@ -49,16 +93,17 @@ vertical_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -122.0
-offset_top = -295.0
+offset_top = 60.0
 offset_right = 122.0
+offset_bottom = 355.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="Jugar" type="Button" parent="VBoxContainer"]
@@ -69,13 +114,6 @@ theme = ExtResource("2_0vlco")
 theme_override_fonts/font = ExtResource("3_ghus6")
 theme_override_font_sizes/font_size = 80
 text = "JUGAR"
-
-[node name="Opciones" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_ohrl7")
-theme_override_fonts/font = ExtResource("3_ghus6")
-theme_override_font_sizes/font_size = 64
-text = "OPCIONES"
 
 [node name="Creditos" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -90,3 +128,8 @@ theme = ExtResource("4_ohrl7")
 theme_override_fonts/font = ExtResource("3_ghus6")
 theme_override_font_sizes/font_size = 64
 text = "SALIR"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7vf8y")
+}
