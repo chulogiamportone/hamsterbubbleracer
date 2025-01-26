@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://drns7fwaluwqh"]
+[gd_scene load_steps=10 format=3 uid="uid://drns7fwaluwqh"]
 
 [ext_resource type="AudioStream" uid="uid://b4d3cp3gnm7ph" path="res://assets/sound/sfx/ball_rolling.ogg" id="1_h020o"]
 [ext_resource type="Script" path="res://player/scenes/player.tres.gd" id="1_l4tx2"]
 [ext_resource type="PackedScene" uid="uid://cp2ebpt8ap4x7" path="res://assets/models/hamster.glb" id="2_hsjo8"]
-[ext_resource type="Script" path="res://assets/models/hamster.gd" id="3_28r4h"]
+[ext_resource type="Script" path="res://player/scripts/hamster.gd" id="3_28r4h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1c2f"]
 rough = true
@@ -30,11 +30,6 @@ radius = 1.0
 height = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nk1ak"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a4oba"]
-gravity = Vector3(-5, 0, 0)
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_angma"]
 
 [node name="player" type="Node3D"]
 
@@ -74,15 +69,12 @@ bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
 bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
 bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="hamster"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.840392, 0)
-process_material = SubResource("ParticleProcessMaterial_a4oba")
-draw_pass_1 = SubResource("RibbonTrailMesh_angma")
-
 [node name="rolling_ball_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_h020o")
 volume_db = 3.0
 pitch_scale = 0.9
 parameters/looping = true
+
+[node name="Node3D" type="Node3D" parent="."]
 
 [editable path="hamster"]
