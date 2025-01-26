@@ -61,8 +61,11 @@ func _process(delta: float) -> void:
 albedo_color = Color(0.21, 0.10024, 0.0042, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmwoq"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.389371, 0.532866, 0.991924, 1)
+sky_horizon_color = Color(0.826388, 0.936695, 0.697574, 1)
+ground_bottom_color = Color(0.402676, 0.586335, 0.288183, 1)
+ground_horizon_color = Color(0.424175, 0.736669, 0.437012, 1)
+ground_energy_multiplier = 0.74
 
 [sub_resource type="Sky" id="Sky_n78yi"]
 sky_material = SubResource("ProceduralSkyMaterial_pmwoq")
@@ -94,7 +97,7 @@ transform = Transform3D(0.8628, 0, 0, 0, 0.8628, 0, 0, 0, 0.8628, -90.8634, -3.4
 [node name="Camera3D" parent="." instance=ExtResource("4_5uctk")]
 
 [node name="player1" parent="Camera3D/SubViewportContainer/SubViewportP" index="0"]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -89.6424, -3.53553, -74.7671)
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -89.731, -4.0794, -74.7671)
 
 [node name="Skeleton3D" parent="Camera3D/SubViewportContainer/SubViewportP/player1/hamster/Armature" index="0"]
 bones/0/rotation = Quaternion(0.415996, -0.139276, 0.89631, -0.0646413)
@@ -176,7 +179,7 @@ text = "/3 Laps"
 vertical_alignment = 1
 
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.42988, -72.7501)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.94331, -72.7501)
 
 [node name="mesh" parent="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster_ball" index="0"]
 material_override = SubResource("StandardMaterial3D_kqmhy")
