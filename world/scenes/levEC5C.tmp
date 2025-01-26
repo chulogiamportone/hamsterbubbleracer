@@ -5,48 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://dufgfxbypv01w" path="res://world/scenes/race_track.tscn" id="1_wgwqt"]
 [ext_resource type="Texture2D" uid="uid://dyfex5eooq0sv" path="res://assets/textures/dark/texture_05.png" id="3_wflky"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="5_fpmv8"]
-
 [ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_y5wq5"]
 [ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
 [ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="7_d3jny"]
-
+[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="8_mfqat"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nsed"]
 albedo_texture = ExtResource("3_wflky")
 uv1_triplanar = true
-
-
-[sub_resource type="GDScript" id="GDScript_j2a6w"]
-script/source = "extends Node3D
-
-@onready var hamster_ball = get_parent().get_node(\"hamster_ball\")
-@onready var camera: Camera3D = $\"../hamster_ball/CameraRig/Camera3D\"
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-var rotation_speed := 100.0
-
-func _process(delta: float) -> void:
-	if hamster_ball:
-		global_position = hamster_ball.global_position
-		
-		var camera_forward = -camera.global_transform.basis.z
-		camera_forward.y = 0
-		camera_forward = camera_forward.normalized()
-		
-		var target_rotation = atan2(camera_forward.x, camera_forward.z) - 1.5
-		rotation.y = lerp_angle(rotation.y, target_rotation, 0.1)
-		
-		# Check if the hamster ball is moving
-		var ball_speed = hamster_ball.linear_velocity.length()
-		if ball_speed > 0.1:
-			if !animation_player.is_playing():
-				animation_player.play(\"ArmatureAction_001\")
-			# Adjust animation speed based on ball speed
-			animation_player.speed_scale = ball_speed / 10.0  # Adjust the divisor to control sensitivity
-		else:
-			animation_player.stop()
-"
-
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmwoq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -154,11 +120,6 @@ vertical_alignment = 1
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.44594, -72.6981)
 
-
-[node name="hamster" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="1"]
-script = SubResource("GDScript_j2a6w")
-
-
 [node name="Player2_UI" type="Control" parent="Camera3D/SubViewportContainer2/SubViewport2" index="1"]
 layout_mode = 3
 anchors_preset = 15
@@ -238,9 +199,8 @@ environment = SubResource("Environment_pe761")
 transform = Transform3D(-0.109893, -0.858887, -0.500237, -0.881607, -0.148194, 0.448116, -0.459013, 0.490257, -0.740915, 0, 0.912998, 0.485992)
 shadow_enabled = true
 
-[node name="Goal" parent="." node_paths=PackedStringArray("timer_for_stop") instance=ExtResource("5_fpmv8")]
+[node name="Goal" parent="." instance=ExtResource("5_fpmv8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
-timer_for_stop = NodePath("../Camera3D/TimerPlayer")
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)

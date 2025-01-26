@@ -10,6 +10,8 @@ class_name Player extends RigidBody3D
 @export var checkpoint_position = null
 @onready var camera_rig: Node3D = $CameraRig
 @onready var rolling_ball_sfx: AudioStreamPlayer = $"../rolling_ball_sfx"
+@onready var fin_race=false
+@onready var time_race=0
 
 var real_speed = 0
 

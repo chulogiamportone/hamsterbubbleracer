@@ -15,23 +15,35 @@ class_name Goal extends Area3D
 @onready var sprite2_position_1: TextureRect = $"../Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/GridContainer/SpritePosition1"
 @onready var sprite2_position_2: TextureRect = $"../Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/GridContainer/SpritePosition2"
 
+@export var timer_for_stop: Timer
+
 
 var texture_1=preload("res://assets/uno.png")
 var texture_2=preload("res://assets/dos plata.png")
-
+var players_finished=0
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.name=="hamster_ball" and body.chekpoint_number==10:
-		body.chekpoint_number=0
-		player_lap(body)
-		if body.is_player_two:
-			label_poistion_2.text=str(body.get_parent().get_child(0).lap)
-		else:
-			label_poistion.text=str(body.get_parent().get_child(0).lap)
-		body.checkpoint_position=body.position
-
-func player_lap(body):
-	body.lap+=1
+	
+	if body.name=="hamster_ball" and body.lap==3:
+		body.fin_race=true
+		players_finished+=1
+	else:
+		if body.name=="hamster_ball" and body.chekpoint_number==10:
+			body.chekpoint_number=0
+			body.lap+=1
+			if body.is_player_two:
+				label_poistion_2.text=str(body.get_parent().get_child(0).lap)
+			else:
+				label_poistion.text=str(body.get_parent().get_child(0).lap)
+			body.checkpoint_position=body.position
+	if players_finished==1:
+		GlobalR.winner=body.is_player_two
+		GlobalR.time_player=GlobalR.time_race
+	if players_finished==2:
+		timer_for_stop.stop()
+		get_tree().change_scene_to_file("res://Winner/scene/winner.tscn")
+		
+		
 	
 func _process(delta: float) -> void:
 	
@@ -147,3 +159,6 @@ func player_2_first():
 	sprite_position_2.texture=preload("res://assets/HAMSTER MARRON MAD.png")
 	sprite2_position_1.texture=preload("res://assets/HAMSTER NEGRO.png")
 	sprite2_position_2.texture=preload("res://assets/HAMSTER MARRON MAD.png")
+
+
+	
