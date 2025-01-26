@@ -5,7 +5,9 @@ class_name Player extends RigidBody3D
 @export var camera_rotation_speed := 1.1 
 @export var max_velocity := 80
 @export var is_player_two :bool=false
-
+@export var lap:int=0
+@export var chekpoint_number:int=9
+@export var checkpoint_position = null
 @onready var camera_rig: Node3D = $CameraRig
 
 var real_speed = 0

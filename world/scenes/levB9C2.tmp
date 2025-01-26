@@ -1,13 +1,16 @@
-
-[gd_scene load_steps=11 format=3 uid="uid://sljbkndk6dnj"]
+[gd_scene load_steps=13 format=3 uid="uid://bgq205gu260ri"]
 
 [ext_resource type="Script" path="res://world/script/level_0.gd" id="1_igk8f"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="1_u7oys"]
-[ext_resource type="PackedScene" uid="uid://bmvih1ndetdkl" path="res://world/scenes/race_track.tscn" id="1_wgwqt"]
+[ext_resource type="PackedScene" path="res://world/scenes/race_track.tscn" id="1_wgwqt"]
+[ext_resource type="Texture2D" uid="uid://cp0i8mdidyhdg" path="res://assets/textures/dark/texture_08.png" id="2_de0ss"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="5_fpmv8"]
-[ext_resource type="PackedScene" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
-[ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="7_d3jny"]
+[ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
+[ext_resource type="PackedScene" uid="uid://ik04h1twmjwq" path="res://Goal/scene/died.tscn" id="7_d3jny"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq4l5"]
+albedo_texture = ExtResource("2_de0ss")
+uv1_triplanar = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmwoq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,11 +28,9 @@ fog_light_color = Color(0.739811, 0.76485, 0.804196, 1)
 fog_light_energy = 0.5
 fog_density = 0.0015
 
-
 [sub_resource type="GDScript" id="GDScript_ha562"]
 script/source = "class_name Died extends Area3D
 "
-
 
 [node name="level_0" type="Node3D"]
 script = ExtResource("1_igk8f")
@@ -37,39 +38,22 @@ script = ExtResource("1_igk8f")
 [node name="mapa5hams" parent="." instance=ExtResource("1_wgwqt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
+[node name="BézierCurve" parent="mapa5hams" index="0"]
+material_override = SubResource("StandardMaterial3D_kq4l5")
 
 [node name="Camera3D" parent="." instance=ExtResource("1_u7oys")]
 
 [node name="player1" parent="Camera3D/SubViewportContainer/SubViewportP" index="0"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -89.6424, -4.17607, -75.5056)
 
-[node name="hamster_ball" parent="Camera3D/SubViewportContainer/SubViewportP/player1" index="0"]
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
-is_player_two = false
-
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.44594, -72.6981)
-
-[node name="hamster_ball" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="0"]
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
-
-[node name="LabelTimer" parent="Camera3D/LabelTimer" index="0"]
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
 
 [node name="enviroment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pe761")
 
 [node name="sun" type="DirectionalLight3D" parent="."]
-
-transform = Transform3D(-0.866025, -0.433013, 0.25, -0.198262, 0.756404, 0.623333, -0.459013, 0.490257, -0.740915, 0, 373.013, -172.214)
-light_energy = 0.1
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Goal" parent="." instance=ExtResource("5_fpmv8")]
@@ -77,7 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)
-
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -117,7 +100,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.97
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1406, 0, 78.8261)
 
 [node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint6" index="0"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.034, 4.64255, -48.308)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.0344, 5.43683, -48.3077)
 
 [node name="CheckPoint7" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5346, 0, 107.612)
@@ -178,4 +161,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4728, -47.6079, -2.02516)
 [editable path="ChekPointContainer/CheckPoint9"]
 [editable path="ChekPointContainer/CheckPoint10"]
 [editable path="Died"]
-
