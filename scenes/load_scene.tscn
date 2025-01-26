@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://oyw2vmw83one"]
+[gd_scene load_steps=26 format=3 uid="uid://oyw2vmw83one"]
 
+[ext_resource type="Script" path="res://scenes/load_scene.gd" id="1_f17x8"]
 [ext_resource type="Texture2D" uid="uid://bll6av624ovmk" path="res://Assets/HAMSTER/base rueda.png" id="1_l24am"]
 [ext_resource type="Texture2D" uid="uid://bdkflho6se5w2" path="res://Assets/Backgroundsolo.png" id="1_t0d2k"]
 [ext_resource type="Texture2D" uid="uid://bgaisn81p0bhb" path="res://Assets/HAMSTER/rueda.png" id="2_4mbwy"]
@@ -108,6 +109,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f17x8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -194,10 +196,10 @@ text = "CONTROLES"
 
 [node name="Player2_label" type="MarginContainer" parent="."]
 layout_mode = 2
-offset_left = 606.0
-offset_top = 190.0
-offset_right = 850.0
-offset_bottom = 249.0
+offset_left = 1068.0
+offset_top = 473.5
+offset_right = 1312.0
+offset_bottom = 532.5
 grow_horizontal = 2
 size_flags_vertical = 0
 
@@ -215,10 +217,10 @@ horizontal_alignment = 1
 [node name="Keys_P2" type="GridContainer" parent="."]
 texture_filter = 1
 layout_mode = 2
-offset_left = 518.0
-offset_top = 257.0
-offset_right = 583.0
-offset_bottom = 328.0
+offset_left = 980.0
+offset_top = 540.5
+offset_right = 1045.0
+offset_bottom = 611.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -265,10 +267,10 @@ texture = ExtResource("18_1mn38")
 
 [node name="Player1_label" type="MarginContainer" parent="."]
 layout_mode = 2
-offset_left = 198.0
-offset_top = 201.0
-offset_right = 314.0
-offset_bottom = 231.0
+offset_left = 602.0
+offset_top = 470.0
+offset_right = 834.0
+offset_bottom = 529.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -289,9 +291,10 @@ horizontal_alignment = 1
 [node name="Keys_P1" type="GridContainer" parent="."]
 texture_filter = 1
 layout_mode = 2
-offset_top = 257.0
-offset_right = 98.0
-offset_bottom = 328.0
+offset_left = 462.0
+offset_top = 540.5
+offset_right = 560.0
+offset_bottom = 611.5
 grow_vertical = 2
 scale = Vector2(3, 3)
 pivot_offset = Vector2(-50, 0)
