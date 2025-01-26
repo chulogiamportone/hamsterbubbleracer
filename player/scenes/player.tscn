@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=10 format=3 uid="uid://drns7fwaluwqh"]
-
+[gd_scene load_steps=11 format=3 uid="uid://drns7fwaluwqh"]
 
 [ext_resource type="Script" path="res://player/scripts/player_main.gd" id="1_3umyw"]
 [ext_resource type="AudioStream" uid="uid://b4d3cp3gnm7ph" path="res://assets/sound/sfx/ball_rolling.ogg" id="1_h020o"]
@@ -58,7 +56,6 @@ bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
 bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
 bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
 bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
-
 
 [node name="Cube" parent="hamster/Armature/Skeleton3D" index="0"]
 material_override = ExtResource("5_5xfub")

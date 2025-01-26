@@ -1,14 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://db1pyw8ifje3u"]
+[gd_scene load_steps=19 format=3 uid="uid://mlmp18d7px5y"]
 
 [ext_resource type="Script" path="res://world/script/level_0.gd" id="1_od1pg"]
 [ext_resource type="PackedScene" uid="uid://mvbqenuym03q" path="res://assets/models/mapa8hams.glb" id="2_i0g3c"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="4_5uctk"]
 [ext_resource type="PackedScene" uid="uid://bgjw635ryk5cu" path="res://assets/models/Meta..glb" id="4_ej8ho"]
-[ext_resource type="Theme" path="res://Fonts/font_theme_pixelart.tres" id="5_fdmp6"]
+[ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_fdmp6"]
 [ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="6_us3ei"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="7_v0xl5"]
-[ext_resource type="PackedScene" path="res://Goal/scene/CheckPoint.tscn" id="8_i802p"]
-[ext_resource type="PackedScene" path="res://Goal/scene/died.tscn" id="9_n4n14"]
+[ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="8_i802p"]
+[ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="9_n4n14"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dnc1n"]
 
@@ -78,6 +78,10 @@ fog_enabled = true
 fog_light_color = Color(0.739811, 0.76485, 0.804196, 1)
 fog_light_energy = 0.5
 fog_density = 0.0015
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r501c"]
+height = 0.401211
+radius = 4.56235
 
 [sub_resource type="GDScript" id="GDScript_ha562"]
 script/source = "class_name Died extends Area3D
@@ -272,6 +276,8 @@ vertical_alignment = 1
 [node name="LabelTimer" parent="Camera3D/LabelTimer" index="0"]
 theme = ExtResource("5_fdmp6")
 
+[node name="TimerPlayer" type="Timer" parent="Camera3D"]
+
 [node name="enviroment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pe761")
 
@@ -288,7 +294,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timerlabel" type="Timer" parent="."]
 wait_time = 5.0
 
 [node name="ChekPointContainer" type="Node3D" parent="."]
@@ -320,7 +326,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -38.31
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.289, 0, 109.134)
 
 [node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint5" index="0"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.9796, 4.77307, -45.7226)
+transform = Transform3D(-4.37114e-08, -1, 0, 0.247303, -1.081e-08, -0.968938, 0.968938, -4.23536e-08, 0.247303, -31.9796, 0.205045, -45.7311)
+shape = SubResource("CylinderShape3D_r501c")
 
 [node name="CheckPoint6" parent="ChekPointContainer" instance=ExtResource("8_i802p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1406, 0, 78.8261)
@@ -358,7 +365,8 @@ script = SubResource("GDScript_ha562")
 [node name="CollisionShape3D" parent="Died" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4728, -47.6079, -2.02516)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Camera3D/TimerPlayer" to="." method="_on_timer_player_timeout"]
+[connection signal="timeout" from="Timerlabel" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ChekPointContainer/CheckPoint" to="Goal" method="_on_check_point_body_entered"]
 [connection signal="body_entered" from="ChekPointContainer/CheckPoint2" to="Goal" method="_on_check_point_2_body_entered"]
 [connection signal="body_entered" from="ChekPointContainer/CheckPoint3" to="Goal" method="_on_check_point_3_body_entered"]

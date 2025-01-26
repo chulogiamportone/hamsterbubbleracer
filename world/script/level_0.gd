@@ -4,6 +4,8 @@ extends Node3D
 @onready var timer_player: Timer = $Camera3D/TimerPlayer
 
 
+
+
 func _ready() -> void:
 	if GlobalR.is_race_start:
 		timerlabel.start()

@@ -1,20 +1,35 @@
-[gd_scene load_steps=15 format=3 uid="uid://sljbkndk6dnj"]
+[gd_scene load_steps=19 format=3 uid="uid://sljbkndk6dnj"]
 
 [ext_resource type="Script" path="res://world/script/level_0.gd" id="1_igk8f"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="1_u7oys"]
 [ext_resource type="PackedScene" uid="uid://dufgfxbypv01w" path="res://world/scenes/race_track.tscn" id="1_wgwqt"]
 [ext_resource type="Texture2D" uid="uid://dyfex5eooq0sv" path="res://assets/textures/dark/texture_05.png" id="3_wflky"]
+[ext_resource type="Script" path="res://assets/models/hamster.gd" id="5_1b23w"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="5_fpmv8"]
-
 [ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_y5wq5"]
 [ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
 [ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="7_d3jny"]
-
+[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="8_mfqat"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nsed"]
 albedo_texture = ExtResource("3_wflky")
 uv1_triplanar = true
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dnc1n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crg6n"]
+transparency = 1
+albedo_color = Color(0.689054, 0.299059, 0, 0.4)
+metallic = 0.5
+roughness = 0.0
+roughness_texture_channel = 3
+emission_enabled = true
+emission_energy_multiplier = 10.08
+emission_operator = 1
+emission_on_uv2 = true
+rim_texture = SubResource("NoiseTexture2D_dnc1n")
+clearcoat_roughness = 0.0
+uv2_triplanar = true
 
 [sub_resource type="GDScript" id="GDScript_j2a6w"]
 script/source = "extends Node3D
@@ -46,7 +61,6 @@ func _process(delta: float) -> void:
 		else:
 			animation_player.stop()
 "
-
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmwoq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -83,6 +97,28 @@ material_override = SubResource("StandardMaterial3D_7nsed")
 
 [node name="player1" parent="Camera3D/SubViewportContainer/SubViewportP" index="0"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -89.6424, -4.17607, -75.5056)
+script = null
+
+[node name="mesh" parent="Camera3D/SubViewportContainer/SubViewportP/player1/hamster_ball" index="0"]
+material_override = SubResource("StandardMaterial3D_crg6n")
+
+[node name="Camera3D" parent="Camera3D/SubViewportContainer/SubViewportP/player1/hamster_ball/CameraRig" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.78912, 4.64622)
+
+[node name="hamster" parent="Camera3D/SubViewportContainer/SubViewportP/player1" index="1"]
+script = ExtResource("5_1b23w")
+
+[node name="Skeleton3D" parent="Camera3D/SubViewportContainer/SubViewportP/player1/hamster/Armature" index="0"]
+bones/0/rotation = Quaternion(0.417414, -0.117958, 0.899364, -0.0547467)
+bones/1/rotation = Quaternion(0.69012, -1.40909e-07, -1.34371e-07, 0.723695)
+bones/2/position = Vector3(-1.524e-07, 0.350043, -0.434692)
+bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
+bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
+bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
+bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
+
+[node name="Cube" parent="Camera3D/SubViewportContainer/SubViewportP/player1/hamster/Armature/Skeleton3D" index="0"]
+material_override = null
 
 [node name="Player1_UI" type="Control" parent="Camera3D/SubViewportContainer/SubViewportP" index="1"]
 layout_mode = 3
@@ -153,11 +189,28 @@ vertical_alignment = 1
 
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.44594, -72.6981)
+script = null
 
+[node name="mesh" parent="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster_ball" index="0"]
+material_override = SubResource("StandardMaterial3D_crg6n")
+
+[node name="Camera3D" parent="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster_ball/CameraRig" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.78912, 4.64622)
 
 [node name="hamster" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="1"]
 script = SubResource("GDScript_j2a6w")
 
+[node name="Skeleton3D" parent="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster/Armature" index="0"]
+bones/0/rotation = Quaternion(0.417414, -0.117958, 0.899364, -0.0547467)
+bones/1/rotation = Quaternion(0.69012, -1.40909e-07, -1.34371e-07, 0.723695)
+bones/2/position = Vector3(-1.524e-07, 0.350043, -0.434692)
+bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
+bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
+bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
+bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
+
+[node name="Cube" parent="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster/Armature/Skeleton3D" index="0"]
+material_override = null
 
 [node name="Player2_UI" type="Control" parent="Camera3D/SubViewportContainer2/SubViewport2" index="1"]
 layout_mode = 3
@@ -238,9 +291,8 @@ environment = SubResource("Environment_pe761")
 transform = Transform3D(-0.109893, -0.858887, -0.500237, -0.881607, -0.148194, 0.448116, -0.459013, 0.490257, -0.740915, 0, 0.912998, 0.485992)
 shadow_enabled = true
 
-[node name="Goal" parent="." node_paths=PackedStringArray("timer_for_stop") instance=ExtResource("5_fpmv8")]
+[node name="Goal" parent="." instance=ExtResource("5_fpmv8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
-timer_for_stop = NodePath("../Camera3D/TimerPlayer")
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)
@@ -315,7 +367,6 @@ script = SubResource("GDScript_ha562")
 [node name="CollisionShape3D" parent="Died" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4728, -47.6079, -2.02516)
 
-[connection signal="timeout" from="Camera3D/TimerPlayer" to="." method="_on_timer_player_timeout"]
 [connection signal="timeout" from="Timerlabel" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ChekPointContainer/CheckPoint" to="Goal" method="_on_check_point_body_entered"]
 [connection signal="body_entered" from="ChekPointContainer/CheckPoint2" to="Goal" method="_on_check_point_2_body_entered"]
