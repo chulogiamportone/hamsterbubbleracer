@@ -199,9 +199,8 @@ environment = SubResource("Environment_pe761")
 transform = Transform3D(-0.109893, -0.858887, -0.500237, -0.881607, -0.148194, 0.448116, -0.459013, 0.490257, -0.740915, 0, 0.912998, 0.485992)
 shadow_enabled = true
 
-[node name="Goal" parent="." node_paths=PackedStringArray("timer_for_stop") instance=ExtResource("5_fpmv8")]
+[node name="Goal" parent="." instance=ExtResource("5_fpmv8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
-timer_for_stop = NodePath("../Camera3D/TimerPlayer")
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)
