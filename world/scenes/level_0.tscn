@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://sljbkndk6dnj"]
+[gd_scene load_steps=15 format=3 uid="uid://sljbkndk6dnj"]
 
 [ext_resource type="Script" path="res://world/script/level_0.gd" id="1_igk8f"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="1_u7oys"]
@@ -6,17 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dyfex5eooq0sv" path="res://assets/textures/dark/texture_05.png" id="3_wflky"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="5_fpmv8"]
 [ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_y5wq5"]
-[ext_resource type="PackedScene" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
+[ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
 [ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="7_d3jny"]
-[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://fonts/ThaleahFat.ttf" id="8_mfqat"]
+[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="8_mfqat"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nsed"]
 albedo_texture = ExtResource("3_wflky")
 uv1_triplanar = true
-
-[sub_resource type="GDScript" id="GDScript_j2a6w"]
-script/source = "extends Node3D
-"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmwoq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -53,17 +49,6 @@ material_override = SubResource("StandardMaterial3D_7nsed")
 
 [node name="player1" parent="Camera3D/SubViewportContainer/SubViewportP" index="0"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -89.6424, -4.17607, -75.5056)
-
-[node name="hamster" parent="Camera3D/SubViewportContainer/SubViewportP/player1" index="1"]
-script = SubResource("GDScript_j2a6w")
-
-[node name="Skeleton3D" parent="Camera3D/SubViewportContainer/SubViewportP/player1/hamster/Armature" index="0"]
-bones/0/rotation = Quaternion(0.417414, -0.117958, 0.899364, -0.0547467)
-bones/1/rotation = Quaternion(0.69012, -1.40909e-07, -1.34371e-07, 0.723695)
-bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
-bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
-bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
-bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
 
 [node name="Player1_UI" type="Control" parent="Camera3D/SubViewportContainer/SubViewportP" index="1"]
 layout_mode = 3
@@ -134,17 +119,6 @@ vertical_alignment = 1
 
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.44594, -72.6981)
-
-[node name="hamster" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="1"]
-script = SubResource("GDScript_j2a6w")
-
-[node name="Skeleton3D" parent="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster/Armature" index="0"]
-bones/0/rotation = Quaternion(0.417414, -0.117958, 0.899364, -0.0547467)
-bones/1/rotation = Quaternion(0.69012, -1.40909e-07, -1.34371e-07, 0.723695)
-bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
-bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
-bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
-bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
 
 [node name="Player2_UI" type="Control" parent="Camera3D/SubViewportContainer2/SubViewport2" index="1"]
 layout_mode = 3
