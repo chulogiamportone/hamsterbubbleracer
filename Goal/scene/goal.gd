@@ -1,35 +1,51 @@
 class_name Goal extends Area3D
 @onready var chek_point_container: Node3D = $"../ChekPointContainer"
-@onready var label_poistion: Label = $"../Camera3D/SubViewportContainer/SubViewportP/LabelPosition/LabelPoistion"
-@onready var label_poistion_2: Label = $"../Camera3D/SubViewportContainer2/SubViewport2/LabelPosition2/LabelPoistion2"
+@onready var label_poistion: Label = $"../Camera3D/SubViewportContainer/SubViewportP/Player1_UI/Label_laps1"
+@onready var label_poistion_2: Label = $"../Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/Label_laps2"
+
 @onready var hamster_ball: Player = $"../Camera3D/SubViewportContainer/SubViewportP/player1/hamster_ball"
 @onready var hamster_ball2: Player = $"../Camera3D/SubViewportContainer2/SubViewport2/player2/hamster_ball"
+
+@onready var texture_rectp_1: TextureRect = $"../Camera3D/SubViewportContainer/SubViewportP/Player1_UI/TextureRectp1"
+@onready var texture_rectp_2: TextureRect = $"../Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/TextureRectp2"
+
+@onready var sprite_position_1: TextureRect = $"../Camera3D/SubViewportContainer/SubViewportP/Player1_UI/GridContainer/SpritePosition1"
+@onready var sprite_position_2: TextureRect = $"../Camera3D/SubViewportContainer/SubViewportP/Player1_UI/GridContainer/SpritePosition2"
+
+@onready var sprite2_position_1: TextureRect = $"../Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/GridContainer/SpritePosition1"
+@onready var sprite2_position_2: TextureRect = $"../Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/GridContainer/SpritePosition2"
+
+
+var texture_1=preload("res://assets/uno.png")
+var texture_2=preload("res://assets/dos plata.png")
+
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name=="hamster_ball" and body.chekpoint_number==10:
 		body.chekpoint_number=0
 		player_lap(body)
-		body.get_parent().get_parent().get_child(1).get_child(0).text=str(body.get_parent().get_child(0).lap)+"/3"
+		if body.is_player_two:
+			label_poistion_2.text=str(body.get_parent().get_child(0).lap)
+		else:
+			label_poistion.text=str(body.get_parent().get_child(0).lap)
 		body.checkpoint_position=body.position
 
 func player_lap(body):
 	body.lap+=1
 	
-func _input(event: InputEvent) -> void:
+func _process(delta: float) -> void:
+	
 	if hamster_ball.lap>hamster_ball2.lap:
-		label_poistion.text="1°"
-		label_poistion_2.text="2°"
+		player_1_first()
 	if hamster_ball.lap<hamster_ball2.lap:
-		label_poistion.text="2°"
-		label_poistion_2.text="1°"
+		player_2_first()
 	if hamster_ball.lap==hamster_ball2.lap:
 		if hamster_ball.chekpoint_number>hamster_ball2.chekpoint_number:
-			label_poistion.text="1°"
-			label_poistion_2.text="2°"
+			player_1_first()
 		if hamster_ball.chekpoint_number<hamster_ball2.chekpoint_number:
-			label_poistion.text="2°"
-			label_poistion_2.text="1°"
+			player_2_first()
 		if hamster_ball.chekpoint_number==hamster_ball2.chekpoint_number:
+			
 			var checkpoint
 			if hamster_ball.chekpoint_number==0:
 				checkpoint=$"../ChekPointContainer/CheckPoint/CollisionShape3D"
@@ -53,15 +69,13 @@ func _input(event: InputEvent) -> void:
 				checkpoint=$"../ChekPointContainer/CheckPoint10/CollisionShape3D"
 			if hamster_ball.chekpoint_number==10:
 				checkpoint=$"../Died/CollisionShape3D"
-			var p1_distance=hamster_ball.position.distance_to(checkpoint.position)
-			var p2_distance=hamster_ball2.position.distance_to(checkpoint.position)
-			if p1_distance>=p2_distance:
-				label_poistion.text="1°"
-				label_poistion_2.text="2°"
+			var p1_distance=abs(hamster_ball.position.distance_to(checkpoint.position))
+			var p2_distance=abs(hamster_ball2.position.distance_to(checkpoint.position))
+			if p1_distance>p2_distance:
+				player_1_first()
 			else:
-				label_poistion_2.text="1°"
-				label_poistion.text="2°"
-				
+				player_2_first()
+			
 func _on_check_point_body_entered(body: Node3D) -> void:
 	if body.name=="hamster_ball" :
 		if body.chekpoint_number==0:
@@ -116,3 +130,20 @@ func _on_check_point_10_body_entered(body: Node3D) -> void:
 func _on_died_body_entered(body: Node3D) -> void:
 	if body.name=="hamster_ball":
 		body.position=body.checkpoint_position
+
+func player_1_first():
+	
+	texture_rectp_1.texture=texture_1
+	texture_rectp_2.texture=texture_2
+	sprite_position_1.texture=preload("res://assets/HAMSTER MARRON.png")
+	sprite_position_2.texture=preload("res://assets/HAMSTER NEGRO MAD.png")
+	sprite2_position_1.texture=preload("res://assets/HAMSTER MARRON.png")
+	sprite2_position_2.texture=preload("res://assets/HAMSTER NEGRO MAD.png")
+
+func player_2_first():
+	texture_rectp_2.texture=texture_1
+	texture_rectp_1.texture=texture_2
+	sprite_position_1.texture=preload("res://assets/HAMSTER NEGRO.png")
+	sprite_position_2.texture=preload("res://assets/HAMSTER MARRON MAD.png")
+	sprite2_position_1.texture=preload("res://assets/HAMSTER NEGRO.png")
+	sprite2_position_2.texture=preload("res://assets/HAMSTER MARRON MAD.png")
