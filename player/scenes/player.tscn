@@ -3,18 +3,6 @@
 [ext_resource type="Script" path="res://player/scenes/player.tres.gd" id="1_l4tx2"]
 [ext_resource type="PackedScene" uid="uid://cp2ebpt8ap4x7" path="res://assets/models/hamster.glb" id="2_hsjo8"]
 
-[sub_resource type="GDScript" id="GDScript_j2a6w"]
-script/source = "extends Node3D
-
-@onready var ball = $\"../hamster_ball\"
-
-func _physics_process(delta: float) -> void:
-	# Update position to match ball
-	global_position = ball.global_position
-	# Keep original rotation or set specific rotation as needed
-	# rotation = Vector3.ZERO  # Uncomment this if you want to maintain a fixed rotation
-"
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1c2f"]
 rough = true
 bounce = 0.1
@@ -41,7 +29,31 @@ height = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nk1ak"]
 
+[sub_resource type="GDScript" id="GDScript_j2a6w"]
+script/source = "extends Node3D
+"
+
 [node name="player" type="Node3D"]
+
+[node name="hamster_ball" type="RigidBody3D" parent="."]
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_t1c2f")
+angular_damp = 20.0
+script = ExtResource("1_l4tx2")
+
+[node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00267434, 1.19209e-07, 0.00615072)
+material_override = SubResource("StandardMaterial3D_crg6n")
+mesh = SubResource("SphereMesh_d76o5")
+
+[node name="hitbox" type="CollisionShape3D" parent="hamster_ball"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_nk1ak")
+
+[node name="CameraRig" type="Node3D" parent="hamster_ball"]
+
+[node name="Camera3D" type="Camera3D" parent="hamster_ball/CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.78912, 4.64622)
 
 [node name="hamster" parent="." instance=ExtResource("2_hsjo8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00267434, 1.19209e-07, 0.00615072)
@@ -58,30 +70,5 @@ bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
 bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
 bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
 bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
-
-[node name="hamster_ball" type="RigidBody3D" parent="."]
-mass = 2.0
-physics_material_override = SubResource("PhysicsMaterial_t1c2f")
-angular_damp = 20.0
-script = ExtResource("1_l4tx2")
-move_speed = null
-jump_force = null
-camera_rotation_speed = null
-max_velocity = null
-is_player_two = null
-
-[node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00267434, 1.19209e-07, 0.00615072)
-material_override = SubResource("StandardMaterial3D_crg6n")
-mesh = SubResource("SphereMesh_d76o5")
-
-[node name="hitbox" type="CollisionShape3D" parent="hamster_ball"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-shape = SubResource("SphereShape3D_nk1ak")
-
-[node name="CameraRig" type="Node3D" parent="hamster_ball"]
-
-[node name="Camera3D" type="Camera3D" parent="hamster_ball/CameraRig"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.78912, 4.64622)
 
 [editable path="hamster"]
