@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Goal/scene/goal.gd" id="1_4savh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0er18"]
-size = Vector3(46.2548, 58.6621, 1.69162)
+size = Vector3(8.74065, 58.6621, 1.69162)
 
 [node name="Goal" type="Area3D"]
 script = ExtResource("1_4savh")

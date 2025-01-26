@@ -1,13 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://drns7fwaluwqh"]
+[gd_scene load_steps=8 format=3 uid="uid://drns7fwaluwqh"]
 
 [ext_resource type="Texture2D" uid="uid://8eihe0i1u0h3" path="res://assets/textures/orange/texture_09.png" id="1_824vg"]
 [ext_resource type="Script" path="res://player/scenes/player.tres.gd" id="1_l4tx2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1c2f"]
 rough = true
+bounce = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dnc1n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crg6n"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.568627)
 albedo_texture = ExtResource("1_824vg")
+metallic = 0.5
+roughness = 0.0
+roughness_texture_channel = 3
+emission_enabled = true
+emission_energy_multiplier = 10.08
+emission_operator = 1
+emission_on_uv2 = true
+rim_texture = SubResource("NoiseTexture2D_dnc1n")
+clearcoat_roughness = 0.0
 uv2_triplanar = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_d76o5"]
@@ -19,11 +33,20 @@ height = 2.0
 [node name="player" type="Node3D"]
 
 [node name="hamster_ball" type="RigidBody3D" parent="."]
+mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_t1c2f")
 angular_damp = 20.0
 script = ExtResource("1_l4tx2")
+move_speed = null
+jump_force = null
+camera_rotation_speed = null
+max_velocity = null
+is_player_two = null
+lap = null
+chekpoint_number = null
 
 [node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00267434, 1.19209e-07, 0.00615072)
 material_override = SubResource("StandardMaterial3D_crg6n")
 mesh = SubResource("SphereMesh_d76o5")
 

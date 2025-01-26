@@ -5,6 +5,8 @@ class_name Player extends RigidBody3D
 @export var camera_rotation_speed := 1.1 
 @export var max_velocity := 80
 @export var is_player_two :bool=false
+@export var lap:int=0
+@export var chekpoint_number:int=9
 
 @onready var camera_rig: Node3D = $CameraRig
 
@@ -16,6 +18,9 @@ func _ready() -> void:
 	real_speed=move_speed
 
 func _physics_process(delta: float) -> void:
+	mass = 2
+	angular_damp = 20
+	physics_material_override.bounce = 0.1
 	camera_rig.global_position = global_position
 	if !GlobalR.is_race_start:
 		if is_player_two:
