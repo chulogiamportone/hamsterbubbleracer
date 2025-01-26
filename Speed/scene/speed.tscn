@@ -1,16 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0qyk4yk80q5h"]
+[gd_scene load_steps=3 format=3 uid="uid://c0qyk4yk80q5h"]
 
-[ext_resource type="Texture2D" uid="uid://c4k82nfph84ng" path="res://assets/textures/texture_arrow.png" id="1_j1ajd"]
 [ext_resource type="Script" path="res://Speed/script/speed.gd" id="1_mtboj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m1gxw"]
 size = Vector3(0.0268036, 0.0123047, 0.0438141)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykgel"]
-albedo_texture = ExtResource("1_j1ajd")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_rb4me"]
-size = Vector2(3, 5)
 
 [node name="Speed" type="Area3D"]
 script = ExtResource("1_mtboj")
@@ -18,11 +11,6 @@ script = ExtResource("1_mtboj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(113.849, 0, 0, 0, 113.849, 0, 0, 0, 113.849, 0.01297, 0.700438, 0.00968552)
 shape = SubResource("BoxShape3D_m1gxw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.00364, 0, 0, 0, 1.00364, 0, 0, 0, 1.00364, 0, 0.01, 0)
-material_override = SubResource("StandardMaterial3D_ykgel")
-mesh = SubResource("PlaneMesh_rb4me")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

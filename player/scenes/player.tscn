@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://drns7fwaluwqh"]
+[gd_scene load_steps=10 format=3 uid="uid://drns7fwaluwqh"]
 
+[ext_resource type="AudioStream" uid="uid://b4d3cp3gnm7ph" path="res://assets/sound/sfx/ball_rolling.ogg" id="1_h020o"]
 [ext_resource type="Script" path="res://player/scenes/player.tres.gd" id="1_l4tx2"]
 [ext_resource type="PackedScene" uid="uid://cp2ebpt8ap4x7" path="res://assets/models/hamster.glb" id="2_hsjo8"]
 [ext_resource type="Script" path="res://assets/models/hamster.gd" id="3_28r4h"]
@@ -60,12 +61,18 @@ script = ExtResource("3_28r4h")
 transform = Transform3D(0.8075, 0, 0, 0, 0.800698, -0.104589, 0, 0.104589, 0.800698, 0, -0.94358, 0.1)
 
 [node name="Skeleton3D" parent="hamster/Armature" index="0"]
-bones/0/rotation = Quaternion(0.416065, -0.138323, 0.896457, -0.0641987)
-bones/1/rotation = Quaternion(0.706354, -1.37561e-07, -1.37797e-07, 0.707859)
+bones/0/rotation = Quaternion(0.417414, -0.117958, 0.899364, -0.0547467)
+bones/1/rotation = Quaternion(0.69012, -1.40909e-07, -1.34371e-07, 0.723695)
 bones/2/position = Vector3(-1.524e-07, 0.350043, -0.434692)
-bones/2/rotation = Quaternion(3.16528e-07, -0.0753246, 0.997159, 2.03843e-08)
-bones/3/rotation = Quaternion(0.305193, 1.93412e-07, -6.22004e-08, 0.95229)
-bones/4/rotation = Quaternion(0.565327, -1.58753e-07, 2.84509e-07, 0.824867)
-bones/5/rotation = Quaternion(0.413552, -2.38204e-08, -1.1478e-07, 0.910481)
+bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
+bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
+bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
+bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
+
+[node name="rolling_ball_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_h020o")
+volume_db = 3.0
+pitch_scale = 0.9
+parameters/looping = true
 
 [editable path="hamster"]
