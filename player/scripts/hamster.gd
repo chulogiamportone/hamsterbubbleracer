@@ -6,6 +6,7 @@ extends Node3D
 
 var rotation_speed := 100.0
 
+
 func _process(delta: float) -> void:
 	if hamster_ball:
 		global_position = hamster_ball.global_position
