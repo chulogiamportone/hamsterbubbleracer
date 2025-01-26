@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=2 format=3 uid="uid://bmvih1ndetdkl"]
+
 
 [ext_resource type="PackedScene" uid="uid://bnyvkgq47n0bq" path="res://assets/models/mapa5hams.glb" id="1_e684o"]
 
