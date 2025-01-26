@@ -87,24 +87,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1689.82, 324, 0)
 fov = 126.563
 
 [node name="hamster_ball" parent="Camera3D/SubViewportContainer/SubViewportP/player1" index="0"]
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
-is_player_two = false
-lap = 0
-chekpoint_number = 9
+chekpoint_number = 10
 
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 67.6694, 1.80461, 0)
 
 [node name="hamster_ball" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="0"]
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
-lap = 0
-chekpoint_number = 9
+chekpoint_number = 10
 
 [node name="LabelTimer" parent="Camera3D/LabelTimer" index="0"]
 texture_filter = 1
@@ -129,5 +118,7 @@ wait_time = 5.0
 
 [editable path="Camera3D"]
 [editable path="Camera3D/SubViewportContainer/SubViewportP/player1"]
+[editable path="Camera3D/SubViewportContainer/SubViewportP/player1/hamster"]
 [editable path="Camera3D/SubViewportContainer2/SubViewport2/player2"]
+[editable path="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster"]
 [editable path="Goal"]
