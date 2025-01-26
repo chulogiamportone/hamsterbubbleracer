@@ -1,29 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://drns7fwaluwqh"]
+[gd_scene load_steps=11 format=3 uid="uid://drns7fwaluwqh"]
 
+[ext_resource type="Script" path="res://player/scripts/player_main.gd" id="1_3umyw"]
 [ext_resource type="AudioStream" uid="uid://b4d3cp3gnm7ph" path="res://assets/sound/sfx/ball_rolling.ogg" id="1_h020o"]
 [ext_resource type="Script" path="res://player/scenes/player.tres.gd" id="1_l4tx2"]
 [ext_resource type="PackedScene" uid="uid://cp2ebpt8ap4x7" path="res://assets/models/hamster.glb" id="2_hsjo8"]
+[ext_resource type="Material" uid="uid://bj17cc1lphpxv" path="res://player/materials/player_2_sphere.tres" id="2_xfsdf"]
 [ext_resource type="Script" path="res://player/scripts/hamster.gd" id="3_28r4h"]
+[ext_resource type="Material" uid="uid://kcc4tk57884" path="res://player/materials/player_1_hamster.tres" id="5_5xfub"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1c2f"]
 rough = true
 bounce = 0.1
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dnc1n"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crg6n"]
-transparency = 1
-albedo_color = Color(0.689054, 0.299059, 0, 0.4)
-metallic = 0.5
-roughness = 0.0
-roughness_texture_channel = 3
-emission_enabled = true
-emission_energy_multiplier = 10.08
-emission_operator = 1
-emission_on_uv2 = true
-rim_texture = SubResource("NoiseTexture2D_dnc1n")
-clearcoat_roughness = 0.0
-uv2_triplanar = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_d76o5"]
 radius = 1.0
@@ -32,6 +19,7 @@ height = 2.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_nk1ak"]
 
 [node name="player" type="Node3D"]
+script = ExtResource("1_3umyw")
 
 [node name="hamster_ball" type="RigidBody3D" parent="."]
 mass = 2.0
@@ -41,7 +29,7 @@ script = ExtResource("1_l4tx2")
 
 [node name="mesh" type="MeshInstance3D" parent="hamster_ball"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00267434, 1.19209e-07, 0.00615072)
-material_override = SubResource("StandardMaterial3D_crg6n")
+material_override = ExtResource("2_xfsdf")
 mesh = SubResource("SphereMesh_d76o5")
 
 [node name="hitbox" type="CollisionShape3D" parent="hamster_ball"]
@@ -51,7 +39,7 @@ shape = SubResource("SphereShape3D_nk1ak")
 [node name="CameraRig" type="Node3D" parent="hamster_ball"]
 
 [node name="Camera3D" type="Camera3D" parent="hamster_ball/CameraRig"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.78912, 4.64622)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.218126, 2.95597, 4.79274)
 
 [node name="hamster" parent="." instance=ExtResource("2_hsjo8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00267434, 1.19209e-07, 0.00615072)
@@ -69,12 +57,13 @@ bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
 bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
 bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
 
+[node name="Cube" parent="hamster/Armature/Skeleton3D" index="0"]
+material_override = ExtResource("5_5xfub")
+
 [node name="rolling_ball_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_h020o")
 volume_db = 3.0
 pitch_scale = 0.9
 parameters/looping = true
-
-[node name="Node3D" type="Node3D" parent="."]
 
 [editable path="hamster"]
