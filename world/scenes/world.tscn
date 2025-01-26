@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0qyk4yk80q5h" path="res://Speed/scene/speed.tscn" id="3_dh1oq"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="4_ydm76"]
 [ext_resource type="PackedScene" uid="uid://beloata4fmem5" path="res://trampoline/scene/trampoline.tscn" id="5_mvkm4"]
-[ext_resource type="PackedScene" uid="uid://cxsrf3pmoqhd7" path="res://world/scenes/oval.tscn" id="5_qrnvs"]
+[ext_resource type="PackedScene" uid="uid://c6jbi4bwr6qsl" path="res://world/scenes/oval.tscn" id="5_qrnvs"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="6_bs7mi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h7r1n"]
@@ -86,8 +86,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7803, 0.239958, 117.991)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1689.82, 324, 0)
 fov = 126.563
 
+[node name="hamster_ball" parent="Camera3D/SubViewportContainer/SubViewportP/player1" index="0"]
+move_speed = 30
+jump_force = 8.0
+camera_rotation_speed = 1.1
+max_velocity = 80
+is_player_two = false
+lap = 0
+chekpoint_number = 9
+
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 67.6694, 1.80461, 0)
+
+[node name="hamster_ball" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="0"]
+move_speed = 30
+jump_force = 8.0
+camera_rotation_speed = 1.1
+max_velocity = 80
+lap = 0
+chekpoint_number = 9
 
 [node name="LabelTimer" parent="Camera3D/LabelTimer" index="0"]
 texture_filter = 1

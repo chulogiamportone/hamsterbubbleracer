@@ -1,3 +1,5 @@
-[gd_scene format=3 uid="uid://c15w07vmp8wll"]
+[gd_scene load_steps=2 format=3 uid="uid://bmvih1ndetdkl"]
 
-[node name="RaceTrack" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://bnyvkgq47n0bq" path="res://assets/models/mapa5hams.glb" id="1_e684o"]
+
+[node name="mapa5hams" instance=ExtResource("1_e684o")]

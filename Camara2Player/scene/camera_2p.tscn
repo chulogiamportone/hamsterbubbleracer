@@ -27,6 +27,13 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.3833
 
 [node name="hamster_ball" parent="SubViewportContainer/SubViewportP/player1" index="0"]
 mass = 1.0
+move_speed = 30
+jump_force = 8.0
+camera_rotation_speed = 1.1
+max_velocity = 80
+is_player_two = false
+lap = 0
+chekpoint_number = 9
 
 [node name="mesh" parent="SubViewportContainer/SubViewportP/player1/hamster_ball" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -72,7 +79,13 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.6845
 
 [node name="hamster_ball" parent="SubViewportContainer2/SubViewport2/player2" index="0"]
 mass = 1.0
+move_speed = 30
+jump_force = 8.0
+camera_rotation_speed = 1.1
+max_velocity = 80
 is_player_two = true
+lap = 0
+chekpoint_number = 9
 
 [node name="mesh" parent="SubViewportContainer2/SubViewport2/player2/hamster_ball" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
