@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://db1pyw8ifje3u"]
+[gd_scene load_steps=20 format=3 uid="uid://db1pyw8ifje3u"]
 
 [ext_resource type="Script" path="res://world/script/level_0.gd" id="1_od1pg"]
 [ext_resource type="PackedScene" uid="uid://mvbqenuym03q" path="res://assets/models/mapa8hams.glb" id="2_i0g3c"]
+[ext_resource type="PackedScene" uid="uid://b64emow2kgouj" path="res://assets/models/hamster_wheel.glb" id="2_o68w1"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="4_5uctk"]
 [ext_resource type="PackedScene" uid="uid://bgjw635ryk5cu" path="res://assets/models/Meta..glb" id="4_ej8ho"]
 [ext_resource type="Theme" path="res://Fonts/font_theme_pixelart.tres" id="5_fdmp6"]
@@ -89,6 +90,9 @@ script/source = "class_name Died extends Area3D
 
 [node name="level_1" type="Node3D"]
 script = ExtResource("1_od1pg")
+
+[node name="hamster_wheel" parent="." instance=ExtResource("2_o68w1")]
+transform = Transform3D(-24.1604, 0, 29.4972, 0, 38.1288, 0, -29.4972, 0, -24.1604, 21.4664, 21.1499, -12.5577)
 
 [node name="Shading" type="Node3D" parent="."]
 
@@ -370,6 +374,10 @@ script = SubResource("GDScript_ha562")
 
 [node name="CollisionShape3D" parent="Died" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4728, -47.6079, -2.02516)
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.780845, 0.624725, 0, -0.624725, 0.780845, 0, 65.7673, 119.709)
+current = true
 
 [connection signal="timeout" from="Camera3D/TimerPlayer" to="." method="_on_timer_player_timeout"]
 [connection signal="timeout" from="Timerlabel" to="." method="_on_timer_timeout"]
