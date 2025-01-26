@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_avk58"]
 [ext_resource type="Texture2D" uid="uid://7j88agbouf2n" path="res://Assets/Background.png" id="1_m2bo5"]
-[ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://fonts/Font_pixel.tres" id="2_0vlco"]
-[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="3_ghus6"]
-[ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://fonts/Label_pixel_16px.tres" id="4_ohrl7"]
+[ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://Fonts/Font_pixel.tres" id="2_0vlco"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="3_ghus6"]
+[ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://Fonts/Label_pixel_16px.tres" id="4_ohrl7"]
+
+[sub_resource type="Animation" id="Animation_j0t6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(705.5, 150)]
+}
 
 [sub_resource type="Animation" id="Animation_k73xh"]
 resource_name = "main_title"
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(705.5, 150), Vector2(705.5, 200), Vector2(705.5, 150)]
-}
-
-[sub_resource type="Animation" id="Animation_j0t6w"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(705.5, 150)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7vf8y"]

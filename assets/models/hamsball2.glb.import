@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://vmcq8mlfjhfa"
-path="res://.godot/imported/hamsball2.glb-968dc6de4b287977ed7988f27f18edd6.scn"
+path="res://.godot/imported/hamsball2.glb-6bc20846710ee39acea95eab8adf4187.scn"
 
 [deps]
 
-source_file="res://assets/models/hamsball2.glb"
-dest_files=["res://.godot/imported/hamsball2.glb-968dc6de4b287977ed7988f27f18edd6.scn"]
+source_file="res://Assets/models/hamsball2.glb"
+dest_files=["res://.godot/imported/hamsball2.glb-6bc20846710ee39acea95eab8adf4187.scn"]
 
 [params]
 

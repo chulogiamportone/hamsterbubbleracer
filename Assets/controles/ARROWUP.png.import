@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt2dcmdgjeauv"
-path="res://.godot/imported/ARROWUP.png-e6c016a7c12d2b20d2b3757384425b3d.ctex"
+path="res://.godot/imported/ARROWUP.png-a24835859454474fa4a512fe7c825dfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/controles/ARROWUP.png"
-dest_files=["res://.godot/imported/ARROWUP.png-e6c016a7c12d2b20d2b3757384425b3d.ctex"]
+source_file="res://Assets/controles/ARROWUP.png"
+dest_files=["res://.godot/imported/ARROWUP.png-a24835859454474fa4a512fe7c825dfc.ctex"]
 
 [params]
 

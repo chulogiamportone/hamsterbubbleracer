@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxsi46bbob1fv"
-path="res://.godot/imported/dos plata.png-19ed7a409d879b452f262889dfd0ff90.ctex"
+path="res://.godot/imported/dos plata.png-a3579e97695351f703f84d3127619a58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dos plata.png"
-dest_files=["res://.godot/imported/dos plata.png-19ed7a409d879b452f262889dfd0ff90.ctex"]
+source_file="res://Assets/dos plata.png"
+dest_files=["res://.godot/imported/dos plata.png-a3579e97695351f703f84d3127619a58.ctex"]
 
 [params]
 

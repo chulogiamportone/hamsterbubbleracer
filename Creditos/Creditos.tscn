@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cftw5du6kdlyd"]
 
-[ext_resource type="Texture2D" uid="uid://bdkflho6se5w2" path="res://assets/Backgroundsolo.png" id="1_fldie"]
-[ext_resource type="Theme" path="res://Fonts/Font_pixel.tres" id="2_23v00"]
+[ext_resource type="Texture2D" uid="uid://bdkflho6se5w2" path="res://Assets/Backgroundsolo.png" id="1_fldie"]
+[ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://Fonts/Font_pixel.tres" id="2_23v00"]
 [ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="3_pmaln"]
-[ext_resource type="Theme" path="res://Fonts/Label_pixel_16px.tres" id="4_rpias"]
-[ext_resource type="Texture2D" uid="uid://5qbgefctyj8q" path="res://assets/HAMSTER NEGRO.png" id="5_ov5hl"]
+[ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://Fonts/Label_pixel_16px.tres" id="4_rpias"]
+[ext_resource type="Texture2D" uid="uid://ck0di8jafuas1" path="res://Assets/backhome.png" id="5_vg3yi"]
 [ext_resource type="Script" path="res://Creditos/texture_button.gd" id="6_7nlvg"]
 
 [node name="Creditos" type="Control"]
@@ -71,19 +71,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -252.0
-offset_top = -118.0
-offset_right = -102.0
-offset_bottom = -68.0
+offset_left = -320.0
+offset_top = -210.0
+offset_right = -170.0
+offset_bottom = -146.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("5_ov5hl")
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_vg3yi")
 script = ExtResource("6_7nlvg")
 
 [connection signal="pressed" from="TextureRect/TextureButton" to="TextureRect/TextureButton" method="_on_pressed"]

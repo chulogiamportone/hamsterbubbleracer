@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cp2ebpt8ap4x7"
-path="res://.godot/imported/hamster.glb-f7318014e46fc06448ffc086b9aa3ea2.scn"
+path="res://.godot/imported/hamster.glb-b5544e22756f30998f72dc7abade9c74.scn"
 
 [deps]
 
-source_file="res://assets/models/hamster.glb"
-dest_files=["res://.godot/imported/hamster.glb-f7318014e46fc06448ffc086b9aa3ea2.scn"]
+source_file="res://Assets/models/hamster.glb"
+dest_files=["res://.godot/imported/hamster.glb-b5544e22756f30998f72dc7abade9c74.scn"]
 
 [params]
 

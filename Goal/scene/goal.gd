@@ -24,7 +24,7 @@ var players_finished=0
 
 func _on_body_entered(body: Node3D) -> void:
 	
-	if body.name=="hamster_ball" and body.lap==0:
+	if body.name=="hamster_ball" and body.lap==3:
 		body.fin_race=true
 		players_finished+=1
 	else:
@@ -149,18 +149,18 @@ func player_1_first():
 	
 	texture_rectp_1.texture=texture_1
 	texture_rectp_2.texture=texture_2
-	sprite_position_1.texture=preload("res://assets/HAMSTER MARRON.png")
-	sprite_position_2.texture=preload("res://assets/HAMSTER NEGRO MAD.png")
-	sprite2_position_1.texture=preload("res://assets/HAMSTER MARRON.png")
-	sprite2_position_2.texture=preload("res://assets/HAMSTER NEGRO MAD.png")
+	sprite_position_1.texture=preload("res://Assets/h/HAMSTER MARRON1.png")
+	sprite_position_2.texture=preload("res://Assets/h/HAMSTER NEGRO MAD1.png")
+	sprite2_position_1.texture=preload("res://Assets/h/HAMSTER MARRON1.png")
+	sprite2_position_2.texture=preload("res://Assets/h/HAMSTER NEGRO MAD1.png")
 
 func player_2_first():
 	texture_rectp_2.texture=texture_1
 	texture_rectp_1.texture=texture_2
-	sprite_position_1.texture=preload("res://assets/HAMSTER NEGRO.png")
-	sprite_position_2.texture=preload("res://assets/HAMSTER MARRON MAD.png")
-	sprite2_position_1.texture=preload("res://assets/HAMSTER NEGRO.png")
-	sprite2_position_2.texture=preload("res://assets/HAMSTER MARRON MAD.png")
+	sprite_position_1.texture=preload("res://Assets/h/HAMSTER NEGRO1.png")
+	sprite_position_2.texture=preload("res://Assets/h/HAMSTER MARRON MAD1.png")
+	sprite2_position_1.texture=preload("res://Assets/h/HAMSTER NEGRO1.png")
+	sprite2_position_2.texture=preload("res://Assets/h/HAMSTER MARRON MAD1.png")
 
 
 	

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0rgo6l1sv2jb"
-path="res://.godot/imported/BARRABLANCA.png-86e59d80e1792147f625f355a0684028.ctex"
+path="res://.godot/imported/BARRABLANCA.png-4935529a22c054424b36787a0018d7b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/NUMEROS/BARRABLANCA.png"
-dest_files=["res://.godot/imported/BARRABLANCA.png-86e59d80e1792147f625f355a0684028.ctex"]
+source_file="res://Assets/NUMEROS/BARRABLANCA.png"
+dest_files=["res://.godot/imported/BARRABLANCA.png-4935529a22c054424b36787a0018d7b2.ctex"]
 
 [params]
 

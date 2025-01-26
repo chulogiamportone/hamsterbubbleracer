@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yjqy6hla1v0f"
-path="res://.godot/imported/hamster run.png-33ab9fb3f2c2a4278d26f9f898c3f072.ctex"
+path="res://.godot/imported/hamster run.png-f13a028e8f44c9be3d580f430a6c4d4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HAMSTER/hamster run.png"
-dest_files=["res://.godot/imported/hamster run.png-33ab9fb3f2c2a4278d26f9f898c3f072.ctex"]
+source_file="res://Assets/HAMSTER/hamster run.png"
+dest_files=["res://.godot/imported/hamster run.png-f13a028e8f44c9be3d580f430a6c4d4f.ctex"]
 
 [params]
 
