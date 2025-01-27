@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1es5ythlklt"]
 
 [ext_resource type="Script" path="res://ai_player.gd" id="1_ryshp"]
-[ext_resource type="Texture2D" uid="uid://cur8237ge6uyy" path="res://assets/textures/purple/texture_03.png" id="2_icq4q"]
+[ext_resource type="Texture2D" uid="uid://cur8237ge6uyy" path="res://Assets/textures/purple/texture_03.png" id="2_icq4q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t1c2f"]
 rough = true

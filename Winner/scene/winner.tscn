@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Winner/script/winner.gd" id="1_fbkvs"]
 [ext_resource type="Texture2D" uid="uid://bdkflho6se5w2" path="res://Assets/Backgroundsolo.png" id="2_sjpgl"]
 [ext_resource type="Texture2D" uid="uid://b4gmdj0o54dbi" path="res://Assets/winner.png" id="4_sv7lj"]
-[ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_jq4lq"]
+[ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://fonts/font_theme_pixelart.tres" id="5_jq4lq"]
 [ext_resource type="Texture2D" uid="uid://ck0di8jafuas1" path="res://Assets/backhome.png" id="6_3nvai"]
-[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="6_ywjft"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="6_ywjft"]
 
 [node name="Winner" type="Control"]
 layout_mode = 3

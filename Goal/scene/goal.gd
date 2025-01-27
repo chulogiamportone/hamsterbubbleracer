@@ -18,8 +18,8 @@ class_name Goal extends Area3D
 @export var timer_for_stop: Timer
 
 
-var texture_1=preload("res://assets/uno.png")
-var texture_2=preload("res://assets/dos plata.png")
+var texture_1=preload("res://Assets/uno.png")
+var texture_2=preload("res://Assets/dos plata.png")
 var players_finished=0
 
 func _on_body_entered(body: Node3D) -> void:
