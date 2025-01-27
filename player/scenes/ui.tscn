@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cp5ork5a7pjs7"]
 
 [ext_resource type="Texture2D" uid="uid://cldujgsp31pvw" path="res://Assets/HAMSTER MARRON.png" id="1_snl8w"]
-[ext_resource type="Texture2D" uid="uid://100am0aexods" path="res://Assets/uno.png" id="2_b5jv8"]
-[ext_resource type="Texture2D" uid="uid://o5vsmokjbdxy" path="res://Assets/HAMSTER NEGRO MAD.png" id="2_itko4"]
-[ext_resource type="Texture2D" uid="uid://bc1fbql215ccx" path="res://Assets/dos plata.png" id="3_3ib0x"]
-[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://fonts/ThaleahFat.ttf" id="4_ramdw"]
+[ext_resource type="Texture2D" uid="uid://jp4jpmypd3nm" path="res://Assets/uno.png" id="2_b5jv8"]
+[ext_resource type="Texture2D" uid="uid://doqbdh07sypyw" path="res://Assets/HAMSTER NEGRO MAD.png" id="2_itko4"]
+[ext_resource type="Texture2D" uid="uid://bxsi46bbob1fv" path="res://Assets/dos plata.png" id="3_3ib0x"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="4_ramdw"]
 
 [sub_resource type="GDScript" id="GDScript_qqfam"]
 

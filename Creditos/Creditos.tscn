@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cftw5du6kdlyd"]
 
 [ext_resource type="Texture2D" uid="uid://bdkflho6se5w2" path="res://Assets/Backgroundsolo.png" id="1_fldie"]
-[ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://Fonts/Font_pixel.tres" id="2_23v00"]
-[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="3_pmaln"]
-[ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://Fonts/Label_pixel_16px.tres" id="4_rpias"]
+[ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://fonts/Font_pixel.tres" id="2_23v00"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="3_pmaln"]
+[ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://fonts/Label_pixel_16px.tres" id="4_rpias"]
 [ext_resource type="Texture2D" uid="uid://ck0di8jafuas1" path="res://Assets/backhome.png" id="5_vg3yi"]
 [ext_resource type="Script" path="res://Creditos/texture_button.gd" id="6_7nlvg"]
 [ext_resource type="AudioStream" uid="uid://cgpx4p5b0ml7a" path="res://Music/carrwra.ogg" id="7_rhx86"]
@@ -94,6 +94,6 @@ script = ExtResource("6_7nlvg")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_rhx86")
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [connection signal="pressed" from="TextureRect/TextureButton" to="TextureRect/TextureButton" method="_on_pressed"]
