@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://mvbqenuym03q"
-path="res://.godot/imported/mapa8hams.glb-9a8e6141825a5ce55c5bd4c2d5f34a27.scn"
+path="res://.godot/imported/mapa8hams.glb-9e6a369768294594a95309096c7ff94d.scn"
 
 [deps]
 
-source_file="res://Assets/models/mapa8hams.glb"
-dest_files=["res://.godot/imported/mapa8hams.glb-9a8e6141825a5ce55c5bd4c2d5f34a27.scn"]
+source_file="res://assets/models/mapa8hams.glb"
+dest_files=["res://.godot/imported/mapa8hams.glb-9e6a369768294594a95309096c7ff94d.scn"]
 
 [params]
 

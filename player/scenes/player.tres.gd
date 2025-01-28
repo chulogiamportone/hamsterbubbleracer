@@ -10,6 +10,7 @@ class_name Player extends RigidBody3D
 @export var checkpoint_position = null
 @onready var camera_rig: Node3D = $CameraRig
 @onready var rolling_ball_sfx: AudioStreamPlayer = $"../rolling_ball_sfx"
+@onready var jump: AudioStreamPlayer = $"../jump"
 @onready var fin_race=false
 @onready var time_race=0
 
@@ -61,8 +62,11 @@ func _physics_process(delta: float) -> void:
 			linear_velocity = current_velocity.normalized() * max_velocity
 	
 		if Input.is_action_just_pressed("jump") and is_on_floor_raycast() and !is_player_two:
+			jump.play()
 			apply_central_impulse(Vector3.UP * jump_force)
+
 		if Input.is_action_just_pressed("jump2") and is_on_floor_raycast() and is_player_two:
+			jump.play()
 			apply_central_impulse(Vector3.UP * jump_force)
 
 		

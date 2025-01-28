@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://yjqy6hla1v0f" path="res://Assets/HAMSTER/hamster run.png" id="3_jswce"]
 [ext_resource type="Script" path="res://scenes/margin_container.gd" id="4_hxeei"]
 [ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://fonts/Font_pixel.tres" id="8_gv85u"]
-[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="8_v0ydn"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="8_v0ydn"]
 [ext_resource type="PackedScene" uid="uid://ogbxsfo3tbgi" path="res://scenes/controlloads.tscn" id="9_md65r"]
 
 [sub_resource type="Animation" id="Animation_culgp"]
