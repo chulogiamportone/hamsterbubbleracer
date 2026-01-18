@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp5ork5a7pjs7"]
+
+[ext_resource type="Texture2D" uid="uid://cldujgsp31pvw" path="res://Assets/HAMSTER MARRON.png" id="1_snl8w"]
+[ext_resource type="Texture2D" uid="uid://100am0aexods" path="res://Assets/uno.png" id="2_b5jv8"]
+[ext_resource type="Texture2D" uid="uid://o5vsmokjbdxy" path="res://Assets/HAMSTER NEGRO MAD.png" id="2_itko4"]
+[ext_resource type="Texture2D" uid="uid://bc1fbql215ccx" path="res://Assets/dos plata.png" id="3_3ib0x"]
+[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://fonts/ThaleahFat.ttf" id="4_ramdw"]
+
+[sub_resource type="GDScript" id="GDScript_qqfam"]
+
+[sub_resource type="Theme" id="Theme_8cjqp"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+
+[node name="UI" type="CanvasLayer"]
+script = SubResource("GDScript_qqfam")
+
+[node name="Player1_UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Player1_UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("2_b5jv8")
+
+[node name="GridContainer" type="GridContainer" parent="Player1_UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 58.0
+offset_bottom = 60.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(-10, 100)
+
+[node name="SpritePosition1" type="TextureRect" parent="Player1_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_snl8w")
+
+[node name="SpritePosition2" type="TextureRect" parent="Player1_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_itko4")
+
+[node name="Label_laps" type="Label" parent="Player1_UI"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(1.5, 1.5)
+theme = SubResource("Theme_8cjqp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ramdw")
+theme_override_font_sizes/font_size = 64
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Player1_UI/Label_laps"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 151.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("4_ramdw")
+theme_override_font_sizes/font_size = 32
+text = "/3 Laps"
+vertical_alignment = 1
+
+[node name="Player2_UI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="Player2_UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("3_3ib0x")
+
+[node name="GridContainer" type="GridContainer" parent="Player2_UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 58.0
+offset_bottom = 60.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(-10, 100)
+
+[node name="SpritePosition1" type="TextureRect" parent="Player2_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_snl8w")
+
+[node name="SpritePosition2" type="TextureRect" parent="Player2_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_itko4")
+
+[node name="Label_laps" type="Label" parent="Player2_UI"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(1.5, 1.5)
+theme = SubResource("Theme_8cjqp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ramdw")
+theme_override_font_sizes/font_size = 64
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Player2_UI/Label_laps"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 151.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("4_ramdw")
+theme_override_font_sizes/font_size = 32
+text = "/3 Laps"
+vertical_alignment = 1

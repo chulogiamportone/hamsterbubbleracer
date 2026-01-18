@@ -27,38 +27,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.3833
 
 [node name="hamster_ball" parent="SubViewportContainer/SubViewportP/player1" index="0"]
 mass = 1.0
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
-is_player_two = false
-lap = 0
-chekpoint_number = 9
 
 [node name="mesh" parent="SubViewportContainer/SubViewportP/player1/hamster_ball" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="LabelLaps" type="Control" parent="SubViewportContainer/SubViewportP"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LabelLaps" type="Label" parent="SubViewportContainer/SubViewportP/LabelLaps"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -17.5
-offset_top = 50.0
-offset_right = 17.5
-offset_bottom = 73.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_m0mws")
-theme_override_font_sizes/font_size = 90
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
 anchors_preset = 15
@@ -79,38 +50,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.6845
 
 [node name="hamster_ball" parent="SubViewportContainer2/SubViewport2/player2" index="0"]
 mass = 1.0
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
 is_player_two = true
-lap = 0
-chekpoint_number = 9
 
 [node name="mesh" parent="SubViewportContainer2/SubViewport2/player2/hamster_ball" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="LabelLaps2" type="Control" parent="SubViewportContainer2/SubViewport2"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LabelLaps2" type="Label" parent="SubViewportContainer2/SubViewport2/LabelLaps2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -17.5
-offset_top = 50.0
-offset_right = 17.5
-offset_bottom = 73.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_m0mws")
-theme_override_font_sizes/font_size = 90
 
 [node name="LabelTimer" type="Control" parent="."]
 layout_mode = 3
@@ -136,4 +79,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [editable path="SubViewportContainer/SubViewportP/player1"]
+[editable path="SubViewportContainer/SubViewportP/player1/hamster"]
 [editable path="SubViewportContainer2/SubViewport2/player2"]
+[editable path="SubViewportContainer2/SubViewport2/player2/hamster"]

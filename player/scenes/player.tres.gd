@@ -6,9 +6,12 @@ class_name Player extends RigidBody3D
 @export var max_velocity := 80
 @export var is_player_two :bool=false
 @export var lap:int=0
-@export var chekpoint_number:int=9
+@export var chekpoint_number:int=10
 @export var checkpoint_position = null
 @onready var camera_rig: Node3D = $CameraRig
+@onready var rolling_ball_sfx: AudioStreamPlayer = $"../rolling_ball_sfx"
+@onready var fin_race=false
+@onready var time_race=0
 
 var real_speed = 0
 
@@ -61,6 +64,16 @@ func _physics_process(delta: float) -> void:
 			apply_central_impulse(Vector3.UP * jump_force)
 		if Input.is_action_just_pressed("jump2") and is_on_floor_raycast() and is_player_two:
 			apply_central_impulse(Vector3.UP * jump_force)
+
+		
+		# Play rolling sound effect if the ball is moving
+		if current_velocity.length() > 0.1 and is_on_floor_raycast():
+			if not rolling_ball_sfx.playing:
+				rolling_ball_sfx.play()
+			# Adjust volume based on velocity
+			rolling_ball_sfx.volume_db = linear_velocity.length() * 0.1 - 20  # Adjust the multiplier and offset as needed
+		else:
+			rolling_ball_sfx.stop()
 
 func is_on_floor_raycast() -> bool:
 	var space = get_world_3d().direct_space_state

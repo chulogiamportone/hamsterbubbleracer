@@ -17,6 +17,7 @@ func _ready() -> void:
 	rotation.x = -0.1 
 	camera.position.z = camera_distance
 
+
 func _physics_process(delta: float) -> void:
 	var horizontal_velocity = Vector2(ball.linear_velocity.x, ball.linear_velocity.z)
 	

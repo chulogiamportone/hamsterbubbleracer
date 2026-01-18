@@ -1,0 +1,309 @@
+[gd_scene load_steps=15 format=3 uid="uid://sljbkndk6dnj"]
+
+[ext_resource type="Script" path="res://world/script/level_0.gd" id="1_igk8f"]
+[ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="1_u7oys"]
+[ext_resource type="PackedScene" uid="uid://dufgfxbypv01w" path="res://world/scenes/race_track.tscn" id="1_wgwqt"]
+[ext_resource type="Texture2D" uid="uid://dyfex5eooq0sv" path="res://assets/textures/dark/texture_05.png" id="3_wflky"]
+[ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="5_fpmv8"]
+[ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_y5wq5"]
+[ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
+[ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="7_d3jny"]
+[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="8_mfqat"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nsed"]
+albedo_texture = ExtResource("3_wflky")
+uv1_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmwoq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_n78yi"]
+sky_material = SubResource("ProceduralSkyMaterial_pmwoq")
+
+[sub_resource type="Environment" id="Environment_pe761"]
+background_mode = 2
+sky = SubResource("Sky_n78yi")
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.739811, 0.76485, 0.804196, 1)
+fog_light_energy = 0.5
+fog_density = 0.0015
+
+[sub_resource type="GDScript" id="GDScript_ha562"]
+script/source = "class_name Died extends Area3D
+"
+
+[node name="level_0" type="Node3D"]
+script = ExtResource("1_igk8f")
+
+[node name="Shading" type="Node3D" parent="."]
+
+[node name="mapa5hams" parent="." instance=ExtResource("1_wgwqt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="BézierCurve" parent="mapa5hams" index="0"]
+material_override = SubResource("StandardMaterial3D_7nsed")
+
+[node name="Camera3D" parent="." instance=ExtResource("1_u7oys")]
+
+[node name="player1" parent="Camera3D/SubViewportContainer/SubViewportP" index="0"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -89.6424, -4.17607, -75.5056)
+
+[node name="Player1_UI" type="Control" parent="Camera3D/SubViewportContainer/SubViewportP" index="1"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRectp1" type="TextureRect" parent="Camera3D/SubViewportContainer/SubViewportP/Player1_UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(50, 50)
+
+[node name="GridContainer" type="GridContainer" parent="Camera3D/SubViewportContainer/SubViewportP/Player1_UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 58.0
+offset_bottom = 60.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(-10, 100)
+
+[node name="SpritePosition1" type="TextureRect" parent="Camera3D/SubViewportContainer/SubViewportP/Player1_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="SpritePosition2" type="TextureRect" parent="Camera3D/SubViewportContainer/SubViewportP/Player1_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Label_laps1" type="Label" parent="Camera3D/SubViewportContainer/SubViewportP/Player1_UI"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("5_y5wq5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_mfqat")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Camera3D/SubViewportContainer/SubViewportP/Player1_UI/Label_laps1"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 151.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("8_mfqat")
+theme_override_font_sizes/font_size = 32
+text = "/3 Laps"
+vertical_alignment = 1
+
+[node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.44594, -72.6981)
+
+[node name="Player2_UI" type="Control" parent="Camera3D/SubViewportContainer2/SubViewport2" index="1"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRectp2" type="TextureRect" parent="Camera3D/SubViewportContainer2/SubViewport2/Player2_UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(50, 50)
+
+[node name="GridContainer" type="GridContainer" parent="Camera3D/SubViewportContainer2/SubViewport2/Player2_UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 58.0
+offset_bottom = 60.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(-10, 100)
+
+[node name="SpritePosition1" type="TextureRect" parent="Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="SpritePosition2" type="TextureRect" parent="Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Label_laps2" type="Label" parent="Camera3D/SubViewportContainer2/SubViewport2/Player2_UI"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("5_y5wq5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_mfqat")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Camera3D/SubViewportContainer2/SubViewport2/Player2_UI/Label_laps2"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 151.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("8_mfqat")
+theme_override_font_sizes/font_size = 32
+text = "/3 Laps"
+vertical_alignment = 1
+
+[node name="LabelTimer" parent="Camera3D/LabelTimer" index="0"]
+theme = ExtResource("5_y5wq5")
+
+[node name="TimerPlayer" type="Timer" parent="Camera3D"]
+
+[node name="enviroment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pe761")
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.109893, -0.858887, -0.500237, -0.881607, -0.148194, 0.448116, -0.459013, 0.490257, -0.740915, 0, 0.912998, 0.485992)
+shadow_enabled = true
+
+[node name="Goal" parent="." instance=ExtResource("5_fpmv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
+
+[node name="CollisionShape3D" parent="Goal" index="0"]
+transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)
+
+[node name="Timerlabel" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="ChekPointContainer" type="Node3D" parent="."]
+
+[node name="CheckPoint" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint" index="0"]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, -46.2815, 4.64176, -36.461)
+
+[node name="CheckPoint2" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2732, 0, -41.3249)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint2" index="0"]
+transform = Transform3D(-0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -46.2815, 4.65164, -33.9698)
+
+[node name="CheckPoint3" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.666, 0, 57.1077)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint3" index="0"]
+transform = Transform3D(-0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, -0.984808, -46.0821, 4.65033, -33.9851)
+
+[node name="CheckPoint4" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.64, 0, 97.1282)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint4" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -38.3194, 4.64689, -48.8016)
+
+[node name="CheckPoint5" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.289, 0, 109.134)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint5" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.9796, 4.77307, -45.7226)
+
+[node name="CheckPoint6" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1406, 0, 78.8261)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint6" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -37.0906, 4.64255, -48.308)
+
+[node name="CheckPoint7" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5346, 0, 107.612)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint7" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.0344, 4.64426, -48.1637)
+
+[node name="CheckPoint8" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.9712, 0, 119.487)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint8" index="0"]
+transform = Transform3D(-0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, -35.4574, 4.64697, -45.2075)
+
+[node name="CheckPoint9" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.314, 0, 102.063)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint9" index="0"]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, -35.1939, 4.64937, -41.7506)
+
+[node name="CheckPoint10" parent="ChekPointContainer" instance=ExtResource("6_017ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.269, 0, -13.5638)
+
+[node name="CollisionShape3D" parent="ChekPointContainer/CheckPoint10" index="0"]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -35.4232, 4.93663, -49.3982)
+
+[node name="Died" parent="." instance=ExtResource("7_d3jny")]
+script = SubResource("GDScript_ha562")
+
+[node name="CollisionShape3D" parent="Died" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4728, -47.6079, -2.02516)
+
+[connection signal="timeout" from="Camera3D/TimerPlayer" to="." method="_on_timer_player_timeout"]
+[connection signal="timeout" from="Timerlabel" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint" to="Goal" method="_on_check_point_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint2" to="Goal" method="_on_check_point_2_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint3" to="Goal" method="_on_check_point_3_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint4" to="Goal" method="_on_check_point_4_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint5" to="Goal" method="_on_check_point_5_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint6" to="Goal" method="_on_check_point_6_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint7" to="Goal" method="_on_check_point_7_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint8" to="Goal" method="_on_check_point_8_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint9" to="Goal" method="_on_check_point_9_body_entered"]
+[connection signal="body_entered" from="ChekPointContainer/CheckPoint10" to="Goal" method="_on_check_point_10_body_entered"]
+[connection signal="body_entered" from="Died" to="Goal" method="_on_died_body_entered"]
+
+[editable path="mapa5hams"]
+[editable path="Camera3D"]
+[editable path="Camera3D/SubViewportContainer/SubViewportP/player1"]
+[editable path="Camera3D/SubViewportContainer/SubViewportP/player1/hamster"]
+[editable path="Camera3D/SubViewportContainer2/SubViewport2/player2"]
+[editable path="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster"]
+[editable path="Goal"]
+[editable path="ChekPointContainer/CheckPoint"]
+[editable path="ChekPointContainer/CheckPoint2"]
+[editable path="ChekPointContainer/CheckPoint3"]
+[editable path="ChekPointContainer/CheckPoint4"]
+[editable path="ChekPointContainer/CheckPoint5"]
+[editable path="ChekPointContainer/CheckPoint6"]
+[editable path="ChekPointContainer/CheckPoint7"]
+[editable path="ChekPointContainer/CheckPoint8"]
+[editable path="ChekPointContainer/CheckPoint9"]
+[editable path="ChekPointContainer/CheckPoint10"]
+[editable path="Died"]

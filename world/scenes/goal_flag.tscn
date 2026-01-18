@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cshr6e6mnbyq"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dnvh5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v7uci"]
+
+[node name="goal_flag" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09475, 0, 0)
+
+[node name="pole" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 2.95, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("CylinderMesh_dnvh5")
+
+[node name="pole2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 2.95, 0, 0, 0, 0.2, 14.0158, 0, 0)
+mesh = SubResource("CylinderMesh_dnvh5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(13.8688, 0, 0, 0, 2.17063, 0, 0, 0, 0.0582576, 7.0246, 1.74387, 0)
+mesh = SubResource("BoxMesh_v7uci")

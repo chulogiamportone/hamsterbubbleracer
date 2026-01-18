@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://behenbvhe8kga"]
+[gd_scene load_steps=13 format=3 uid="uid://behenbvhe8kga"]
 
 [ext_resource type="Texture2D" uid="uid://slqiopssinr8" path="res://assets/textures/dark/texture_04.png" id="1_hhd7p"]
 [ext_resource type="Script" path="res://world/script/world.gd" id="1_q6ge0"]
@@ -27,6 +27,10 @@ fog_density = 0.0015
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqgvm"]
 albedo_texture = ExtResource("1_hhd7p")
 uv1_triplanar = true
+
+[sub_resource type="GDScript" id="GDScript_j2a6w"]
+script/source = "extends Node3D
+"
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_q6ge0")
@@ -86,25 +90,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7803, 0.239958, 117.991)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1689.82, 324, 0)
 fov = 126.563
 
-[node name="hamster_ball" parent="Camera3D/SubViewportContainer/SubViewportP/player1" index="0"]
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
-is_player_two = false
-lap = 0
-chekpoint_number = 9
+[node name="hamster" parent="Camera3D/SubViewportContainer/SubViewportP/player1" index="1"]
+script = SubResource("GDScript_j2a6w")
+
+[node name="Skeleton3D" parent="Camera3D/SubViewportContainer/SubViewportP/player1/hamster/Armature" index="0"]
+bones/0/rotation = Quaternion(0.417414, -0.117958, 0.899364, -0.0547467)
+bones/1/rotation = Quaternion(0.69012, -1.40909e-07, -1.34371e-07, 0.723695)
+bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
+bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
+bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
+bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
 
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 67.6694, 1.80461, 0)
 
-[node name="hamster_ball" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="0"]
-move_speed = 30
-jump_force = 8.0
-camera_rotation_speed = 1.1
-max_velocity = 80
-lap = 0
-chekpoint_number = 9
+[node name="hamster" parent="Camera3D/SubViewportContainer2/SubViewport2/player2" index="1"]
+script = SubResource("GDScript_j2a6w")
+
+[node name="Skeleton3D" parent="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster/Armature" index="0"]
+bones/0/rotation = Quaternion(0.417414, -0.117958, 0.899364, -0.0547467)
+bones/1/rotation = Quaternion(0.69012, -1.40909e-07, -1.34371e-07, 0.723695)
+bones/2/rotation = Quaternion(3.15567e-07, 0.0322284, 0.999481, 1.36632e-08)
+bones/3/rotation = Quaternion(0.00250804, 1.77236e-07, -4.6092e-08, 0.999997)
+bones/4/rotation = Quaternion(0.384096, -1.28808e-07, 3.09278e-07, 0.923293)
+bones/5/rotation = Quaternion(0.914125, 1.09002e-08, -2.58241e-07, 0.405432)
 
 [node name="LabelTimer" parent="Camera3D/LabelTimer" index="0"]
 texture_filter = 1
@@ -129,5 +138,7 @@ wait_time = 5.0
 
 [editable path="Camera3D"]
 [editable path="Camera3D/SubViewportContainer/SubViewportP/player1"]
+[editable path="Camera3D/SubViewportContainer/SubViewportP/player1/hamster"]
 [editable path="Camera3D/SubViewportContainer2/SubViewport2/player2"]
+[editable path="Camera3D/SubViewportContainer2/SubViewport2/player2/hamster"]
 [editable path="Goal"]

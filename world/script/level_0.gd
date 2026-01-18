@@ -1,11 +1,16 @@
 extends Node3D
-@onready var timer: Timer = $Timer
+@onready var timerlabel: Timer = $Timerlabel
 @onready var label_timer: Label = $Camera3D/LabelTimer/LabelTimer
+@onready var timer_player: Timer = $Camera3D/TimerPlayer
+
+
+
 
 func _ready() -> void:
 	if GlobalR.is_race_start:
-		timer.start()
-		await timer.timeout
+		timerlabel.start()
+		await timerlabel.timeout
+		timer_player.start()
 	
 
 func _on_timer_timeout() -> void:
@@ -13,6 +18,10 @@ func _on_timer_timeout() -> void:
 
 func _process(delta: float) -> void:
 	if GlobalR.is_race_start:
-		label_timer.text=str(int(timer.time_left))
+		label_timer.text=str(int(timerlabel.time_left))
 	else: 
-		label_timer.text=""
+		label_timer.text=str(int(GlobalR.time_race))
+
+
+func _on_timer_player_timeout() -> void:
+	GlobalR.time_race+=1

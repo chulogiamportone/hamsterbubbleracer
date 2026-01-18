@@ -1,31 +1,30 @@
- extends RigidBody3D
+extends Node3D
 
-@export var animation_speed_threshold := 5.0  # Adjust this value to determine when to play running animation
-@onready var hamster_model: Node3D = $hamster  # Adjust this path to match your hamster model node
-@onready var animation_player: AnimationPlayer = $hamster/AnimationPlayer  # Adjust path as needed
+@onready var hamster_ball = get_parent().get_node("hamster_ball")
+@onready var camera: Camera3D = $"../hamster_ball/CameraRig/Camera3D"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var previous_velocity := Vector3.ZERO
-var current_acceleration := Vector3.ZERO
 
-func _physics_process(delta: float) -> void:
-	# Calculate acceleration
-	var current_velocity = linear_velocity
-	current_acceleration = (current_velocity - previous_velocity) / delta
-	previous_velocity = current_velocity
-	
-	# Get the horizontal speed (ignoring vertical movement)
-	var horizontal_speed = Vector2(current_velocity.x, current_velocity.z).length()
-	
-	# Update animation based on speed
-	update_animation(horizontal_speed)
+var rotation_speed := 100.0
 
-func update_animation(speed: float) -> void:
-	if not animation_player:
-		return
+
+func _process(delta: float) -> void:
+	if hamster_ball:
+		global_position = hamster_ball.global_position
 		
-	if speed > animation_speed_threshold:
-		if not animation_player.is_playing() or animation_player.current_animation != "run":
-			animation_player.play("ArmatureAction_001")
-			animation_player.speed_scale = clamp(speed / animation_speed_threshold, 0.5, 2.0)
-	else:
-		animation_player.stop()
+		var camera_forward = -camera.global_transform.basis.z
+		camera_forward.y = 0
+		camera_forward = camera_forward.normalized()
+		
+		var target_rotation = atan2(camera_forward.x, camera_forward.z) - 1.5
+		rotation.y = lerp_angle(rotation.y, target_rotation, 0.1)
+	
+	 # Check if the hamster ball is moving
+		var ball_speed = hamster_ball.linear_velocity.length()
+		if ball_speed > 0.1:
+			if !animation_player.is_playing():
+				animation_player.play("ArmatureAction_001")
+			# Adjust animation speed based on ball speed
+			animation_player.speed_scale = ball_speed / 10.0  # Adjust the divisor to control sensitivity
+		else:
+			animation_player.stop()

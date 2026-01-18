@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="HamsterBubble"
-run/main_scene="res://world/scenes/level_0.tscn"
+run/main_scene="res://scenes/splash.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalR="*res://GlobalR.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 
 [input]
 
@@ -76,3 +82,4 @@ jump2={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/screen_space_aa=1
