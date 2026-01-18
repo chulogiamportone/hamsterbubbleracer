@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://b64emow2kgouj" path="res://assets/models/hamster_wheel.glb" id="2_o68w1"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="4_5uctk"]
 [ext_resource type="PackedScene" uid="uid://bgjw635ryk5cu" path="res://assets/models/Meta..glb" id="4_ej8ho"]
-[ext_resource type="Theme" path="res://Fonts/font_theme_pixelart.tres" id="5_fdmp6"]
-[ext_resource type="FontFile" uid="uid://bdw2re343j0hm" path="res://Fonts/ThaleahFat.ttf" id="6_us3ei"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="6_us3ei"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="7_v0xl5"]
 [ext_resource type="PackedScene" path="res://Goal/scene/CheckPoint.tscn" id="8_i802p"]
 [ext_resource type="PackedScene" path="res://Goal/scene/died.tscn" id="9_n4n14"]
+[ext_resource type="AudioStream" uid="uid://c3e2pau3urduy" path="res://Music/Hamster.ogg" id="11_soq1q"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dnc1n"]
 
@@ -104,9 +104,6 @@ transform = Transform3D(0.8628, 0, 0, 0, 0.8628, 0, 0, 0, 0.8628, -90.8634, -3.4
 
 [node name="Camera3D" parent="." instance=ExtResource("4_5uctk")]
 
-[node name="SubViewportP" parent="Camera3D/SubViewportContainer" index="0"]
-size = Vector2i(1344, 1080)
-
 [node name="player1" parent="Camera3D/SubViewportContainer/SubViewportP" index="0"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -89.731, -4.0794, -74.7671)
 
@@ -171,7 +168,6 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 scale = Vector2(1.5, 1.5)
-theme = ExtResource("5_fdmp6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_us3ei")
 theme_override_font_sizes/font_size = 64
@@ -188,9 +184,6 @@ theme_override_fonts/font = ExtResource("6_us3ei")
 theme_override_font_sizes/font_size = 32
 text = "/3 Laps"
 vertical_alignment = 1
-
-[node name="SubViewport2" parent="Camera3D/SubViewportContainer2" index="0"]
-size = Vector2i(1344, 1080)
 
 [node name="player2" parent="Camera3D/SubViewportContainer2/SubViewport2" index="0"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -89.5355, -3.94331, -72.7501)
@@ -265,7 +258,6 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 scale = Vector2(1.5, 1.5)
-theme = ExtResource("5_fdmp6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_us3ei")
 theme_override_font_sizes/font_size = 64
@@ -283,9 +275,6 @@ theme_override_font_sizes/font_size = 32
 text = "/3 Laps"
 vertical_alignment = 1
 
-[node name="LabelTimer" parent="Camera3D/LabelTimer" index="0"]
-theme = ExtResource("5_fdmp6")
-
 [node name="TimerPlayer" type="Timer" parent="Camera3D"]
 
 [node name="enviroment" type="WorldEnvironment" parent="."]
@@ -298,8 +287,9 @@ light_energy = 0.5
 light_indirect_energy = 0.5
 shadow_enabled = true
 
-[node name="Goal" parent="." instance=ExtResource("7_v0xl5")]
+[node name="Goal" parent="." node_paths=PackedStringArray("timer_for_stop") instance=ExtResource("7_v0xl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5863, -5.34136, -66.0858)
+timer_for_stop = NodePath("../Camera3D/TimerPlayer")
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(-0.0548282, 0, 0.998496, 0, 1, 0, -0.998496, 0, -0.0548282, -16.0191, 29.331, -7.70546)
@@ -378,6 +368,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4728, -47.6079, -2.02516)
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.780845, 0.624725, 0, -0.624725, 0.780845, 0, 65.7673, 119.709)
 current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_soq1q")
+volume_db = 6.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="Camera3D/TimerPlayer" to="." method="_on_timer_player_timeout"]
 [connection signal="timeout" from="Timerlabel" to="." method="_on_timer_timeout"]

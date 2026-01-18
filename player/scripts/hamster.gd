@@ -25,6 +25,6 @@ func _process(delta: float) -> void:
 			if !animation_player.is_playing():
 				animation_player.play("ArmatureAction_001")
 			# Adjust animation speed based on ball speed
-			animation_player.speed_scale = ball_speed / 10.0  # Adjust the divisor to control sensitivity
+			animation_player.speed_scale = ball_speed / 5.0  # Adjust the divisor to control sensitivity
 		else:
 			animation_player.stop()

@@ -2,5 +2,5 @@
 
 [resource]
 Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0.447059, 0.352941, 0.203922, 1)
 Label/constants/outline_size = 31

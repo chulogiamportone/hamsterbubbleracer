@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnrvre72yxpc8"]
+[gd_scene load_steps=10 format=3 uid="uid://bnrvre72yxpc8"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_avk58"]
 [ext_resource type="Texture2D" uid="uid://7j88agbouf2n" path="res://Assets/Background.png" id="1_m2bo5"]
 [ext_resource type="Theme" uid="uid://dawhw8ttbc72o" path="res://fonts/Font_pixel.tres" id="2_0vlco"]
-[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="3_ghus6"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="3_ghus6"]
 [ext_resource type="Theme" uid="uid://ivyhgpqjfdqb" path="res://fonts/Label_pixel_16px.tres" id="4_ohrl7"]
+[ext_resource type="AudioStream" uid="uid://cgpx4p5b0ml7a" path="res://Music/carrwra.ogg" id="6_2i2lv"]
 
 [sub_resource type="Animation" id="Animation_j0t6w"]
 length = 0.001
@@ -23,8 +24,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_k73xh"]
 resource_name = "main_title"
-length = 2.0
 loop_mode = 1
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -32,10 +33,10 @@ tracks/0/path = NodePath("Label:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(705.5, 150), Vector2(705.5, 200), Vector2(705.5, 150)]
+"values": [Vector2(0, 200), Vector2(0, 180), Vector2(0, 200)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7vf8y"]
@@ -66,17 +67,11 @@ texture = ExtResource("1_m2bo5")
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -254.5
-offset_top = -390.0
-offset_right = 254.5
-offset_bottom = -122.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 184.886
+offset_bottom = 452.886
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme = ExtResource("2_0vlco")
@@ -133,3 +128,8 @@ text = "SALIR"
 libraries = {
 "": SubResource("AnimationLibrary_7vf8y")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2i2lv")
+autoplay = true
+parameters/looping = true
