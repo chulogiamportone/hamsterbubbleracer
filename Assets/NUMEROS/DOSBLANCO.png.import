@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3o8xkb7kkmkf"
-path="res://.godot/imported/DOSBLANCO.png-378aa9716e82f634c8564f6f18e273ec.ctex"
+path="res://.godot/imported/DOSBLANCO.png-c1aaa3c7edc2db42fc26a8f1855089e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NUMEROS/DOSBLANCO.png"
-dest_files=["res://.godot/imported/DOSBLANCO.png-378aa9716e82f634c8564f6f18e273ec.ctex"]
+source_file="res://assets/NUMEROS/DOSBLANCO.png"
+dest_files=["res://.godot/imported/DOSBLANCO.png-c1aaa3c7edc2db42fc26a8f1855089e6.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

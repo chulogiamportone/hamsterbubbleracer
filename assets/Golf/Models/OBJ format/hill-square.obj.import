@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ikia11brecdq"
+path="res://.godot/imported/hill-square.obj-1c3b1c68ff05a5f7672f1976510b955d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hill-square.obj-1c3b1c68ff05a5f7672f1976510b955d.mesh"]
+
+source_file="res://assets/Golf/Models/OBJ format/hill-square.obj"
+dest_files=["res://.godot/imported/hill-square.obj-1c3b1c68ff05a5f7672f1976510b955d.mesh", "res://.godot/imported/hill-square.obj-1c3b1c68ff05a5f7672f1976510b955d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

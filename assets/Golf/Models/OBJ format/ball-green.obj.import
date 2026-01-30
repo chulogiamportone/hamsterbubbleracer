@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2n1limorjwpg"
+path="res://.godot/imported/ball-green.obj-5af0693ec0ba8101fe4bb9d664b75268.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ball-green.obj-5af0693ec0ba8101fe4bb9d664b75268.mesh"]
+
+source_file="res://assets/Golf/Models/OBJ format/ball-green.obj"
+dest_files=["res://.godot/imported/ball-green.obj-5af0693ec0ba8101fe4bb9d664b75268.mesh", "res://.godot/imported/ball-green.obj-5af0693ec0ba8101fe4bb9d664b75268.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,15 +1,15 @@
 [gd_scene load_steps=19 format=3 uid="uid://sljbkndk6dnj"]
 
-[ext_resource type="Script" path="res://world/script/level_0.gd" id="1_igk8f"]
+[ext_resource type="Script" uid="uid://wmmq3vkgl06t" path="res://world/script/level_0.gd" id="1_igk8f"]
 [ext_resource type="PackedScene" uid="uid://3gaox0812jtj" path="res://Camara2Player/scene/camera_2p.tscn" id="1_u7oys"]
 [ext_resource type="PackedScene" uid="uid://dufgfxbypv01w" path="res://world/scenes/race_track.tscn" id="1_wgwqt"]
-[ext_resource type="Texture2D" uid="uid://dyfex5eooq0sv" path="res://Assets/textures/dark/texture_05.png" id="3_wflky"]
-[ext_resource type="Script" path="res://assets/models/hamster.gd" id="5_1b23w"]
+[ext_resource type="Texture2D" uid="uid://dyfex5eooq0sv" path="res://assets/textures/dark/texture_05.png" id="3_wflky"]
+[ext_resource type="Script" uid="uid://ue5511jhmlne" path="res://player/model/hamster.res" id="5_1b23w"]
 [ext_resource type="PackedScene" uid="uid://d083bj7busxs5" path="res://Goal/scene/goal.tscn" id="5_fpmv8"]
-[ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://fonts/font_theme_pixelart.tres" id="5_y5wq5"]
+[ext_resource type="Theme" uid="uid://b36653tr1evm2" path="res://Fonts/font_theme_pixelart.tres" id="5_y5wq5"]
 [ext_resource type="PackedScene" uid="uid://dwny2jefdrluj" path="res://Goal/scene/CheckPoint.tscn" id="6_017ar"]
 [ext_resource type="PackedScene" uid="uid://ddhtl8sa3vfpy" path="res://Goal/scene/died.tscn" id="7_d3jny"]
-[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://fonts/ThaleahFat.ttf" id="8_mfqat"]
+[ext_resource type="FontFile" uid="uid://c0j0wuwy0g446" path="res://Fonts/ThaleahFat.ttf" id="8_mfqat"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nsed"]
 albedo_texture = ExtResource("3_wflky")

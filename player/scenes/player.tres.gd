@@ -14,6 +14,15 @@ class_name Player extends RigidBody3D
 @onready var fin_race=false
 @onready var time_race=0
 
+# --- NUEVAS VARIABLES PARA MODO GOLF ---
+@export var max_charge_power: float = 100.0 
+@export var charge_speed: float = 60.0      
+@export var vertical_angle_factor: float = 0.5 # Qué tanto "hacia arriba" sale (0 a 1)
+
+var current_charge: float = 0.0
+var is_charging: bool = false
+# ---------------------------------------
+
 var real_speed = 0
 
 func _ready() -> void:
@@ -26,6 +35,11 @@ func _physics_process(delta: float) -> void:
 	angular_damp = 20
 	physics_material_override.bounce = 0.1
 	camera_rig.global_position = global_position
+	
+	# --- NUEVA LLAMADA ---
+	handle_golf_mechanic(delta)
+	# ---------------------
+	
 	if !GlobalR.is_race_start:
 		if is_player_two:
 			if Input.is_action_pressed("move_left2"):  
@@ -61,6 +75,8 @@ func _physics_process(delta: float) -> void:
 		if current_velocity.length() > max_velocity:
 			linear_velocity = current_velocity.normalized() * max_velocity
 	
+		# Nota: Si usas la misma tecla para saltar y cargar, el salto ocurrirá al inicio de la carga.
+		# Si quieres evitar saltar mientras cargas, agrega "and !is_charging" aquí.
 		if Input.is_action_just_pressed("jump") and is_on_floor_raycast() and !is_player_two:
 			jump.play()
 			apply_central_impulse(Vector3.UP * jump_force)
@@ -84,3 +100,48 @@ func is_on_floor_raycast() -> bool:
 	var query = PhysicsRayQueryParameters3D.create(global_position, global_position + Vector3.DOWN * 1.1)
 	query.exclude = [self]
 	return space.intersect_ray(query).size() > 0
+
+# --- FUNCIONES DE GOLF MODIFICADAS ---
+
+func handle_golf_mechanic(delta: float) -> void:
+	# 1. Definir tecla según el jugador
+	var action_shoot = ""
+	if is_player_two:
+		# Puedes cambiar "jump2" por una nueva acción "shoot2" en el Input Map
+		action_shoot = "jump2" 
+	else:
+		# Puedes cambiar "jump" por una nueva acción "shoot" en el Input Map
+		action_shoot = "jump" 
+
+	# 2. Lógica de carga
+	if Input.is_action_pressed(action_shoot):
+		# Solo empezamos a cargar si estamos en el suelo (opcional, estilo golf)
+		if is_on_floor_raycast(): 
+			is_charging = true
+			current_charge += charge_speed * delta
+			
+			if current_charge > max_charge_power:
+				current_charge = max_charge_power
+			
+			print("P" + str(1 if !is_player_two else 2) + " Carga: ", int(current_charge))
+		
+	elif Input.is_action_just_released(action_shoot):
+		if is_charging:
+			execute_launch()
+			current_charge = 0.0
+			is_charging = false
+
+func execute_launch() -> void:
+	var camera_basis = camera_rig.global_transform.basis
+	
+	# Dirección horizontal (hacia donde mira la cámara)
+	var forward_dir = -camera_basis.z
+	forward_dir.y = 0 
+	forward_dir = forward_dir.normalized()
+	
+	# Combinamos adelante + arriba para la parábola
+	# vertical_angle_factor define qué tan alto apunta (0.5 es aprox 45 grados si forward es 1)
+	var launch_vector = (forward_dir + (Vector3.UP * vertical_angle_factor)).normalized()
+	
+	apply_central_impulse(launch_vector * current_charge)
+	print("LANZAMIENTO PARABÓLICO!")

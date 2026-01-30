@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://eotde3v4pqxq"
+path="res://.godot/imported/round-corner-c.obj-9ef45cfad4d6089d5bef5b3aaa12973e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/round-corner-c.obj-9ef45cfad4d6089d5bef5b3aaa12973e.mesh"]
+
+source_file="res://assets/Golf/Models/OBJ format/round-corner-c.obj"
+dest_files=["res://.godot/imported/round-corner-c.obj-9ef45cfad4d6089d5bef5b3aaa12973e.mesh", "res://.godot/imported/round-corner-c.obj-9ef45cfad4d6089d5bef5b3aaa12973e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

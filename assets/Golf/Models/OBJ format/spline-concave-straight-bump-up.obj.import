@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://h2jmagxlm8bw"
+path="res://.godot/imported/spline-concave-straight-bump-up.obj-8f32e3e7eb65117c8af65cf7d136f44e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/spline-concave-straight-bump-up.obj-8f32e3e7eb65117c8af65cf7d136f44e.mesh"]
+
+source_file="res://assets/Golf/Models/OBJ format/spline-concave-straight-bump-up.obj"
+dest_files=["res://.godot/imported/spline-concave-straight-bump-up.obj-8f32e3e7eb65117c8af65cf7d136f44e.mesh", "res://.godot/imported/spline-concave-straight-bump-up.obj-8f32e3e7eb65117c8af65cf7d136f44e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

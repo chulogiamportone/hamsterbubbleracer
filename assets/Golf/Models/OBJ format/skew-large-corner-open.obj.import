@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nxfr2m7be4jt"
+path="res://.godot/imported/skew-large-corner-open.obj-2c48dfc563737b255ddeb7b9c89db255.mesh"
+
+[deps]
+
+files=["res://.godot/imported/skew-large-corner-open.obj-2c48dfc563737b255ddeb7b9c89db255.mesh"]
+
+source_file="res://assets/Golf/Models/OBJ format/skew-large-corner-open.obj"
+dest_files=["res://.godot/imported/skew-large-corner-open.obj-2c48dfc563737b255ddeb7b9c89db255.mesh", "res://.godot/imported/skew-large-corner-open.obj-2c48dfc563737b255ddeb7b9c89db255.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
