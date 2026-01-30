@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doqbdh07sypyw"
-path="res://.godot/imported/HAMSTER NEGRO MAD.png-22ac358e83e3ce13ebc4b42ec080b7b5.ctex"
+path="res://.godot/imported/HAMSTER NEGRO MAD.png-b85025be8113e0fba5f9763ff019e266.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HAMSTER NEGRO MAD.png"
-dest_files=["res://.godot/imported/HAMSTER NEGRO MAD.png-22ac358e83e3ce13ebc4b42ec080b7b5.ctex"]
+source_file="res://assets/HAMSTER NEGRO MAD.png"
+dest_files=["res://.godot/imported/HAMSTER NEGRO MAD.png-b85025be8113e0fba5f9763ff019e266.ctex"]
 
 [params]
 
